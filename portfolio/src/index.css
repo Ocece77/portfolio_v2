@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-pulse: pulse 1s ease-in-out infinite;
+  
+  @keyframes pulse {
+    0%{
+      transform: opacity(0);
+    },
+    100% {
+      transform: opacity(1);
+    }
+
+  }
+}
