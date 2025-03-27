@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion} from 'framer-motion';
 
@@ -19,6 +19,8 @@ const animationVariants =  {
 }
 
 const PixelBackground = () => {
+
+  const pixelContainerRef = useRef(null);
 
   const shuffle = (a) =>{
     var j , x , i ;
@@ -54,8 +56,12 @@ const PixelBackground = () => {
     }) 
   }
 
+  setTimeout(()=>{
+    pixelContainerRef.current.classList.add("hidden")
+  },3000)
+
   return (
-    <div className='fixed top-0 z-80 w-screen h-screen flex'>
+    <div ref={pixelContainerRef} className='fixed top-0 z-80 w-screen h-screen flex'>
       {
         [...Array(20)].map((_, i)=>{
           return <div key={i} className='column'>

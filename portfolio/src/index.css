@@ -1,10 +1,17 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Mea+Culpa&family=Ojuju:wght@200..800&family=Pixelify+Sans:wght@400..700&family=Rubik+Beastly&family=Rubik+Pixels&family=Workbench&display=swap');@import "tailwindcss";
+
 
 @theme {
   --animate-spin: spin 2s ease-in-out infinite;
   --animate-fadeout : fadeOut 1s ease-out 5s ;
   --animate-clignote : clignoter .05s linear 3 1s;
   --animate-big : big  .05s linear 1s;
+  --font-pixelify : "Pixelify Sans", sans-serif;
+  --font-workbench : "Workbench", sans-serif;
+  --font-rubik : "Rubik Beastly", system-ui;
+  --font-bungee : "Bungee Outline", sans-serif;
+  --font-meaculpa :   "Mea Culpa", cursive;
+
 
 
   @keyframes fadeOut {
@@ -30,4 +37,8 @@
   }
  }
 
+ 
+
 }
+
+

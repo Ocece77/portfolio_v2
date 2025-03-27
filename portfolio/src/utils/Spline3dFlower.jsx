@@ -13,7 +13,7 @@ const Spline3dFlower = () => {
   return (
     <div className="overflow-hidden relative h-screen w-screen ">
       
-    <Spline
+    <Spline 
          scene="https://prod.spline.design/Ixb2yYBfDobRanjU/scene.splinecode" 
         onLoad={onLoad}
       />
