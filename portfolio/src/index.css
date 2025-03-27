@@ -1,15 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-pulse: pulse 1s ease-in-out infinite;
-  
-  @keyframes pulse {
-    0%{
-      transform: opacity(0);
-    },
-    100% {
-      transform: opacity(1);
-    }
+  --animate-spin: spin 2s ease-in-out infinite;
+  --animate-fadeout : fadeOut 1s ease-out 5s ;
+  --animate-clignote : clignoter .05s linear 3 1s;
+  --animate-big : big  .05s linear 1s;
 
+
+  @keyframes fadeOut {
+    from{
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-5rem);   
+     }
   }
+
+
+ @keyframes clignoter {
+  100% {
+    opacity: 0;
+  }
+ }
+
+
+ @keyframes big {
+  from {
+    transform: scale(100em);
+  }
+ }
+
 }

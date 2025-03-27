@@ -1,10 +1,24 @@
 import React from 'react'
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import Lenis from 'lenis';
 
-function Home() {
+const Home = () => {
+    
+    // Initialize Lenis
+    const lenis = new Lenis();
+
+    // Use requestAnimationFrame to continuously update the scroll
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
   return (
-    <div className="pt-20">
+    <div className=" h-full w-full">
       <Hero/>
+      <Projects/>
     </div>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
 
-function Projects() {
+function ProjectsPage() {
   return (
     <div>
-      Projects
       
     </div>
   )
 }
 
-export default Projects
+export default ProjectsPage
