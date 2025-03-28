@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "predeploy": "cd portfolio && npm i && npm run build",
-    "deploy": "cd portfolio && gh-pages -d dist",
+    "deploy": "cd portfolio && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
