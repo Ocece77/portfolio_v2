@@ -90,7 +90,7 @@ const Hero = () => {
          
          <div className='flex'>
            <h1 data-depth="0.2" className='gsapelement underline text-yellow-400'><span className='font-meaculpa'>K</span>A<span className='letter font-pixelify'>S</span></h1>
-            <h1 data-depth="0.1" className='gsapelement font-rubik'>I<span className='letter font-pixelify'>N</span>D<span className='letter font-pixelify'>U</span></h1>
+            <h1 data-depth="0.1" className='gsapelement font-rubik'>I<span className='letter font-pixelify '>N</span>D<span className='letter font-pixelify'>U</span></h1>
          </div>
 
         </div>

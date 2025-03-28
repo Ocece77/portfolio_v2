@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "npm run deploy"
+    "deploy": "npm run build"
     
   },
   "dependencies": {
