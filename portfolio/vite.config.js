@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
- base: '/../portfolio/dist',
+ base: '/portfolio-v2/portfolio/dist',
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 100000,
