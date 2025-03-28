@@ -46,6 +46,8 @@ const Navbar = () => {
 
           {/*nav element */}
           <div className='lg:flex justify-around text-[12px] gap-5 ps-15  hidden'>
+          <a href="#projects" className='hover:text-yellow-500 transition-all'>Mes Projets</a>
+
             {
               Object.entries(navElement).map(([key, value]) => {
                return (
@@ -53,7 +55,6 @@ const Navbar = () => {
               )
               })
             }
-              <a href="#projects" className='hover:text-yellow-500 transition-all'>Mes Projets</a>
           </div>
 
          {/*Localisation */}
