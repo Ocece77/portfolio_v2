@@ -11,10 +11,10 @@ function App() {
 
   return (
     <>
-    <Router>
+    <Router basename="/portfolio_v2">
       <Routes>
         <Route path = "/" element = {<MainLayout/> }>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/intership" element={<Intership />} />
           <Route path="/veille" element={<Veille />} />
           <Route path="/projectpage" element={<Projects />} />
