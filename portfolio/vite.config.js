@@ -7,4 +7,8 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
+  base: '/portfolio_v2/',
+  build: {
+    outDir: 'dist'
+  }
 })
