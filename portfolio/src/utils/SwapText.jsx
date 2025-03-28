@@ -7,7 +7,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(TextPlugin);
 const SwapText = ({value }) => {
-
+// font 
   const fontStyles = [
     "font-pixelify",
     "font-workbench",
