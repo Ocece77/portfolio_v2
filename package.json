@@ -1,0 +1,25 @@
+{
+  "name": "portfolio_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "cd portfolio && npm i && npm run build",
+    "deploy": "cd portfolio && gh-pages -d dist",
+    "install-client" : "cd portfolio && npm i",
+    "start-client" : "cd portfolio && npm run deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocece77/portfolio_v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ocece77/portfolio_v2/issues"
+  },
+  "homepage": "https://github.com/Ocece77/portfolio_v2#readme"
+}
