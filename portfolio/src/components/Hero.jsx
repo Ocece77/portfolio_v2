@@ -4,9 +4,12 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import PixelBackground from '../utils/PixelBackground';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SwapText from '../utils/SwapText';
+import { TextPlugin } from "gsap/TextPlugin";
+
 
 const Hero = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger,TextPlugin);
 
   const getBlocks = ()=>{
 
@@ -72,17 +75,18 @@ const Hero = () => {
 
       </div>
 
+
     {/* Texte */}
-    <div className='flex lg:flex-row flex-col justify-between absolute lg:gap-30 bottom-10 px-15'>
+    <div className='flex lg:flex-row flex-col justify-between absolute lg:gap-30 bottom-10 px-15 '>
         <div data-depth="0.2" className=' flex flex-col w-full lg:text-[9.5rem] md:text-[6rem] text-[4rem] font-bold capitalize leading-20 lg:leading-30 text-neutral-900'>
          
           <div className='flex'>
             <h1 ref={Title1Ref}  data-depth="0.9"  className='gsapelement -pb-10'>O
 
-              <span className='letter font-pixelify '>C</span>
+              <span className='letter font-pixelify'>C</span>
               E</h1>
             <h1 ref={Title2Ref}  data-depth="0.4"  className='gsapelement text-yellow-400'>
-              <span className='font-rubik'>A</span>
+              <SwapText letter={"OCEANE"}></SwapText>
               <span className='letter font-mono'>N</span>
               E </h1>
           </div>
@@ -119,6 +123,7 @@ const Hero = () => {
          </div>
          }
       </div>
+
 
       {/*grid*/}
       <PixelBackground />

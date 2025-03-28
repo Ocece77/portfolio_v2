@@ -6,8 +6,7 @@ import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 const navElement = {
   "/intership" : "Mon Stage" ,
-  "/veille" : "Veille" ,
-  "/projectpage" : "Project" ,
+  "/veille" : "Ma Veille" ,
 }
 
 
@@ -54,6 +53,7 @@ const Navbar = () => {
               )
               })
             }
+              <a href="#projects" className='hover:text-yellow-500 transition-all'>Mes Projets</a>
           </div>
 
          {/*Localisation */}

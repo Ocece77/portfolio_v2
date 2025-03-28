@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, {  useRef } from 'react'
-
+//import sticker from "../assets/smileyface.jpeg"
 
 const projectsList =  [
   {
@@ -38,6 +38,24 @@ const projectsList =  [
     photos : [""],
     lien : ""
   },
+
+
+  {
+    nom : "I not Hungry",
+    note : "Projet perso",
+    description : "Générer des recettes grâce à des emojis ou des photos du frigo",
+    photos : [""],
+    lien : ""
+  },
+  
+
+  {
+    nom : "Finaily AI ",
+    note : "Projet perso",
+    description : "Trouver des offres d'emplois adapté à votre profil grâce à l'IA",
+    photos : [""],
+    lien : ""
+  },
   
 
 
@@ -48,10 +66,25 @@ const Projects = () => {
 
   const mainRef = useRef(null);
   const projectContainerRef = useRef(null);
+  const openingTextRef = useRef(null);
 
 
    useGSAP(()=>{
     let sections = gsap.utils.toArray(".panel");
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: projectContainerRef.current,
+            start: "top 0%",
+            end: "bottom 50%",
+            scrub: true,
+          }
+      });
+
+      tl.to(openingTextRef.current ,
+        {
+          
+        }
+      )
 
       gsap.to(sections, { 
         xPercent: -100 * (sections.length - 1),
@@ -70,16 +103,22 @@ const Projects = () => {
    }, [])
 
   return (
-    <div ref={mainRef} className='h-screen w-screen flex'>
-
+    
+    <div id="projects" ref={mainRef} className='h-screen w-screen flex'>
       <div ref={projectContainerRef} className='flex h-fit  w-fit'>
 
+      <div className='panel text-center flex  h-screen w-screen  items-center justify-center'>
+       { /*< img src={sticker} alt="sticker"/> */}
+          <h1 ref={openingTextRef} className=' font-bold text-5xl'>Hey, regarde un peu ce que je fais ! </h1>
+        </div>
+
         {
+          
           projectsList.map((project, i) =>{
             return(
             <div key={i} className='panel h-screen w-screen flex flex-col'>
               {/*Title */}
-              <div className=' text-end'>
+              <div className=' text-end '>
                  <h1 className='text-[5em] font-bold'>{project.nom}</h1>
               </div>
               {/*Image */}
