@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Ocece77/portfolio_v2/issues"
   },
-  "homepage": "https://github.com/Ocece77/portfolio_v2#readme"
+  "homepage": "https://github.com/Ocece77/portfolio_v2#readme",
+  "devDependencies": {
+    "sass-embedded": "^1.86.0"
+  }
 }
