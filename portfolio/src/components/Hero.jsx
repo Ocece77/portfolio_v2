@@ -45,14 +45,14 @@ const Hero = () => {
 
 
 
-      gsap.fromTo(asset2Ref.current ,
+     gsap.fromTo(asset2Ref.current ,
         {translateY:window.innerHeight } ,
         {translateY:"0px", duration: 1 , delay : .7})
 
       gsap.fromTo(threeDref.current ,
         {translateY: "300px" } ,
         {translateY:0, duration:1 , delay : .4})
-
+ 
   } , []);
  
 
@@ -68,8 +68,6 @@ const Hero = () => {
         <div ref={threeDref} data-depth="0.9" className='gsapelement absolute z-90  h-screen w-screen  '>
           <Spline3dFlower />
         </div>
-
-
       </div>
 
 

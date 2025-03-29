@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router';
-import Reveal from '../utils/Reveal.jsx'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 const navElement = {
   "/intership" : "Mon Stage" ,
   "/veille" : "Ma Veille" ,
+  "/btssio" : "Le BTS SIO" ,
 }
 
 
@@ -46,7 +46,7 @@ const Navbar = () => {
 
           {/*nav element */}
           <div className='lg:flex justify-around text-[12px] gap-5 ps-15  hidden'>
-          <a href="#projects" className='hover:text-yellow-500 transition-all'>Mes Projets</a>
+          <a href="/#projects" className='hover:text-yellow-500 transition-all'>Mes Projets</a>
 
             {
               Object.entries(navElement).map(([key, value]) => {

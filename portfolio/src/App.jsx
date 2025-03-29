@@ -5,19 +5,19 @@ import Home from './page/Home';
 import MainLayout from './utils/MainLayout';
 import Intership from './page/Intership';
 import Veille from './page/Veille';
-import Projects from './page/ProjectsPage';
+import Btssio from './page/Btssio';
 
 function App() {
 
   return (
     <>
-    <Router basename="/portfolio_v2">
+    <Router >{/*basename="/portfolio_v2"*/}
       <Routes>
         <Route path = "/" element = {<MainLayout/> }>
-          <Route index element={<Home />} />
+          <Route index path="/" element={<Home />} />
           <Route path="/intership" element={<Intership />} />
           <Route path="/veille" element={<Veille />} />
-          <Route path="/projectpage" element={<Projects />} />
+          <Route path="/btssio" element={<Btssio />} />
         </Route>
       </Routes>
     </Router>

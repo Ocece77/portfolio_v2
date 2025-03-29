@@ -1,15 +1,19 @@
+import React, {  useRef } from 'react'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, {  useRef } from 'react'
-//import sticker from "../assets/smileyface.jpeg"
+import SplineSmiley from '../utils/SplineSmiley';
+import Stickers from '../utils/Stickers';
+import parapplegamespreviewer from "../assets/projetimage/parapplegameprewiew.jpeg";
+import todolistapppreview from "../assets/projetimage/todolistapppreview.jpeg";
+import flynangapreview from "../assets/projetimage/flynangapreview.png";
 
 const projectsList =  [
   {
     nom : "ParApple Games ",
     note : "Participation Swift Student Challenge 2025",
     description : "Application IOS qui fait découvrir les parasport par des jeux utilisant la computer vision",
-    photos : [""],
+    image : parapplegamespreviewer,
     lien : ""
   },
 
@@ -17,7 +21,7 @@ const projectsList =  [
     nom : "Pokédex ",
     note : "Collaboration avec Ya Kelly",
     description : "Application web répertoriant les 100 premiers pokémons",
-    photos : [""],
+    image :  "",
     lien : "https://ocece77.github.io/Pokedex-online/"
   },
   
@@ -26,7 +30,7 @@ const projectsList =  [
     nom : "TODO App",
     note : "Projet perso",
     description : "Application IOS qui fait découvrir les parasport par des jeux utilisant la computer vision",
-    photos : [""],
+    image :  todolistapppreview,
     lien : "https://todo-list-app-1-0wsu.onrender.com"
   },
   
@@ -35,7 +39,7 @@ const projectsList =  [
     nom : "Flynanga App ",
     note : "Pour Flynanga",
     description : "Site vitrine de flynanga",
-    photos : [""],
+    image :  flynangapreview,
     lien : ""
   },
 
@@ -43,8 +47,8 @@ const projectsList =  [
   {
     nom : "I not Hungry",
     note : "Projet perso",
-    description : "Générer des recettes grâce à des emojis ou des photos du frigo",
-    photos : [""],
+    description : "Générer des recettes grâce à des emojis ou des image du frigo",
+    image :  "",
     lien : ""
   },
   
@@ -53,7 +57,7 @@ const projectsList =  [
     nom : "Finaily AI ",
     note : "Projet perso",
     description : "Trouver des offres d'emplois adapté à votre profil grâce à l'IA",
-    photos : [""],
+    image : "",
     lien : ""
   },
   
@@ -66,25 +70,14 @@ const Projects = () => {
 
   const mainRef = useRef(null);
   const projectContainerRef = useRef(null);
-  const openingTextRef = useRef(null);
+
 
 
    useGSAP(()=>{
     let sections = gsap.utils.toArray(".panel");
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: projectContainerRef.current,
-            start: "top 0%",
-            end: "bottom 50%",
-            scrub: true,
-          }
-      });
 
-      tl.to(openingTextRef.current ,
-        {
-          
-        }
-      )
+
+  
 
       gsap.to(sections, { 
         xPercent: -100 * (sections.length - 1),
@@ -105,41 +98,64 @@ const Projects = () => {
   return (
     
     <div id="projects" ref={mainRef} className='h-screen w-screen flex'>
-      <div ref={projectContainerRef} className='flex h-fit  w-fit'>
+      <div ref={projectContainerRef} className='flex h-fit w-fit'>
+   
 
-      <div className='panel text-center flex  h-screen w-screen  items-center justify-center'>
-       { /*< img src={sticker} alt="sticker"/> */}
-          <h1 ref={openingTextRef} className=' font-bold text-5xl'>Hey, regarde un peu ce que je fais ! </h1>
-        </div>
+        <div className='panel text-center flex h-screen w-screen items-center justify-center relative'>
+          {/* Conteneur principal pour les objets 3D */}
+            <div className='relative w-screen h-screen z-10 -bottom-5 md:block hidden'> 
+              {/* Objet 3D Spline */}
+              <div  data-depth="0.9" className=' absolute z-10  h-screen w-screen  '>
+                <SplineSmiley />
+              </div>
+
+            </div>
+
+            {/*mobile only */}
+            <div className='md:hidden block'>
+              <h1 className='text-[3em] font-bold w-screen'>Hey, <span className='underline'> regarde </span>un peu que j'ai fais !</h1>
+            </div>
+
+
+          </div>
 
         {
           
           projectsList.map((project, i) =>{
             return(
-            <div key={i} className='panel h-screen w-screen flex flex-col'>
-              {/*Title */}
-              <div className=' text-end '>
-                 <h1 className='text-[5em] font-bold'>{project.nom}</h1>
-              </div>
-              {/*Image */}
-              <div>
+            <div key={i} className='panel h-screen w-screen flex items-center justify-center '>
+              <Stickers/>
+              <div className='w-full flex flex-col px-10 gap-3'>
+                    {/*Title */}
+                    <div className='text-end'>
+                      <h1 className='lg:text-[4em] text-[3em] font-bold '>{project.nom}</h1>
+                    </div>
+
+                    {/*Image */}
+                    <div className='flex justify-center lg:h-100 overflow-hidden '>
+                    <img src={project.image} alt={project.nom} className='w-full object-cover rounded' />
+                    </div>
+
+                    {/*Titre & description  */}
+                    <div className='flex lg:flex-row flex-col w-full items-end justify-between  lg:gap-0 gap-5'>
+                      <p className='font-mono text-sm lg:w-1/3 w-full'>{project.description}</p>
+                      <p className='font-mono text-sm lg:w-1/5 w-full'>{project.note}</p>
+                    </div>
+
+                    {/*voir le projet btn */}
+                    <div className='absolute bottom-10 inset-x-0 w-full flex justify-center'>
+                    </div>
+                    
+                  
 
               </div>
-
-              {/*Image */}
-              <div className='absolute bottom-10 flex w-full items-end px-10 justify-between'>
-                <p className='font-mono text-sm w-1/3'>{project.description}</p>
-                <p className='font-mono text-sm w-1/5'>{project.note}</p>
-
-              </div>
+ 
+    
             </div>)
   
           })
         }
           
-
-
-      
       </div>
 
     </div>
