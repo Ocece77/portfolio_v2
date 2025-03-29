@@ -26,17 +26,12 @@ const Navbar = () => {
 
   setInterval(checkTime, 1000);
 
-  setTimeout(()=> {
-    navRef.current.classList.add("z-9999")
-    navRef.current.classList.remove("z-110");
-  }, 2000)
-  
   
 
   return (
     /*Nav */
 
-     <nav ref={navRef} className='fixed inset-x-0  w-full h-15 font-mono bg-transparent z-110 text-gray-900  '>
+     <nav ref={navRef} className='fixed inset-x-0  w-full h-15 font-mono bg-transparent z-98 text-gray-900  '>
       <div className=' h-full w-full'>
         <div className='flex h-full justify-evenly items-center'>
          {/*Logo */}

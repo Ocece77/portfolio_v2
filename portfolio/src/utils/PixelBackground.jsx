@@ -44,7 +44,7 @@ const PixelBackground = () => {
     return delays.map((rdn, i) =>{
          return (<motion.div 
           key={i} 
-          className='block' 
+          className='block ' 
           whileInView="closed"
           viewport={{ once: true }}
           variants={animationVariants} 
@@ -61,7 +61,7 @@ const PixelBackground = () => {
   },3000)
 
   return (
-    <div ref={pixelContainerRef} className='fixed top-0 z-80 w-screen h-screen flex'>
+    <div ref={pixelContainerRef} className='fixed top-0 z-9999 w-screen h-screen flex'>
       {
         [...Array(20)].map((_, i)=>{
           return <div key={i} className='column'>

@@ -4,20 +4,12 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import PixelBackground from '../utils/PixelBackground';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import BlockBg from '../utils/BlockBg';
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const getBlocks = ()=>{
 
-    const {innerWidth , innerHeight} = window;
-    const bs = innerWidth * .05;
-    const amountOfBlocks =Math.ceil( innerHeight / bs)
-    
-    return [...Array(amountOfBlocks)].map((_, i) =>{
-         return ( <div key={i} className='block-static'></div> )
-    }) 
-  }
   const asset2Ref = useRef(null);
   const threeDref = useRef(null);
   const container = useRef(null);
@@ -60,10 +52,14 @@ const Hero = () => {
   
 
   return (
-    <div ref={container} className='z-1000 w-full h-screen relative overflow-hidden '> 
+    <div ref={container} className='z-97 w-full h-screen relative overflow-hidden'> 
+    {/*background */}
+    <div ref={asset2Ref}>
+      <BlockBg/>
+    </div>
 
       {/* Conteneur principal pour les objets 3D */}
-      <div className='relative w-screen h-screen z-100 -bottom-5'> 
+      <div className='relative w-screen h-screen z-96 -bottom-5'> 
         {/* Objet 3D Spline */}
         <div ref={threeDref} data-depth="0.9" className='gsapelement absolute z-90  h-screen w-screen  '>
           <Spline3dFlower />
@@ -100,24 +96,7 @@ const Hero = () => {
 
       </div>
 
-      
-      {/* Image de fond  */}
-      <div ref={asset2Ref}  className='w-full h-full absolute top-0  '>
-         {
-           <div className='fixed top-0 z-80 w-screen h-screen flex'>
-           {
-             [...Array(20)].map((_, i)=>{
-               return <div key={i} className={`column-static`}>
-                 {
-                  getBlocks()
-                 }
-               </div>
-             })
-           }
-           
-         </div>
-         }
-      </div>
+
 
 
       {/*grid*/}

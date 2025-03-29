@@ -6,7 +6,9 @@ import SplineSmiley from '../utils/SplineSmiley';
 import Stickers from '../utils/Stickers';
 import parapplegamespreviewer from "../assets/projetimage/parapplegameprewiew.jpeg";
 import todolistapppreview from "../assets/projetimage/todolistapppreview.jpeg";
-import flynangapreview from "../assets/projetimage/flynangapreview.png";
+import flynangapreview from "../assets/projetimage/flynangapreview.jpeg";
+import finailypreview from "../assets/projetimage/finailypreview.jpeg";
+import pokedexpreview from "../assets/projetimage/pokedexpreview.jpeg";
 
 const projectsList =  [
   {
@@ -21,7 +23,7 @@ const projectsList =  [
     nom : "Pokédex ",
     note : "Collaboration avec Ya Kelly",
     description : "Application web répertoriant les 100 premiers pokémons",
-    image :  "",
+    image :  pokedexpreview,
     lien : "https://ocece77.github.io/Pokedex-online/"
   },
   
@@ -54,10 +56,10 @@ const projectsList =  [
   
 
   {
-    nom : "Finaily AI ",
+    nom : "Finaily AI",
     note : "Projet perso",
     description : "Trouver des offres d'emplois adapté à votre profil grâce à l'IA",
-    image : "",
+    image : finailypreview,
     lien : ""
   },
   
@@ -128,7 +130,7 @@ const Projects = () => {
               <div className='w-full flex flex-col px-10 gap-3'>
                     {/*Title */}
                     <div className='text-end'>
-                      <h1 className='lg:text-[4em] text-[3em] font-bold '>{project.nom}</h1>
+                      <h1 className='lg:text-[4em] text-[3em] font-bold'>{project.nom}</h1>
                     </div>
 
                     {/*Image */}
@@ -137,7 +139,7 @@ const Projects = () => {
                     </div>
 
                     {/*Titre & description  */}
-                    <div className='flex lg:flex-row flex-col w-full items-end justify-between  lg:gap-0 gap-5'>
+                    <div className='flex lg:flex-row flex-col w-full items-end justify-between lg:gap-0 gap-5'>
                       <p className='font-mono text-sm lg:w-1/3 w-full'>{project.description}</p>
                       <p className='font-mono text-sm lg:w-1/5 w-full'>{project.note}</p>
                     </div>
