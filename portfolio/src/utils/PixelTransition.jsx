@@ -18,7 +18,7 @@ const animationVariants =  {
    })
 }
 
-const PixelBackground = () => {
+const PixelTransition = () => {
 
   const pixelContainerRef = useRef(null);
 
@@ -78,4 +78,4 @@ const PixelBackground = () => {
 
 
 
-export default PixelBackground
+export default PixelTransition

@@ -2,7 +2,6 @@ import React, {  useRef } from 'react';
 import Spline3dFlower from '../utils/Spline3dFlower';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import PixelBackground from '../utils/PixelBackground';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BlockBg from '../utils/BlockBg';
 
@@ -84,7 +83,7 @@ const Hero = () => {
          
          <div className='flex'>
            <h1 data-depth="0.4" className='gsapelement underline text-yellow-400'><span className='font-meaculpa'>K</span>A<span className='letter font-pixelify'>S</span></h1>
-            <h1 data-depth="0.3" className='gsapelement font-rubik'>I<span className='letter font-pixelify '>N</span>D<span className='letter font-pixelify'>U</span></h1>
+            <h1 data-depth="0.3" className='gsapelement '>I<span className='letter font-pixelify '>N</span><span className='font-rubik'>D</span><span className='letter font-pixelify'>U</span></h1>
          </div>
 
         </div>
@@ -97,10 +96,6 @@ const Hero = () => {
       </div>
 
 
-
-
-      {/*grid*/}
-      <PixelBackground />
     </div>
 
 

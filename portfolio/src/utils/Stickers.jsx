@@ -17,7 +17,6 @@ const stickersArray = [
 const Stickers = () => {
 
   const [stickers, setStickers] = useState([]);
-  const [newSticker , setNewSticker] =  useState("")
 
 
   const getRandomSticker = () => {
@@ -50,8 +49,8 @@ const Stickers = () => {
     <div className="absolute z-50 top-0 inset-x-0 w-screen h-screen">
       <div className="relative">
         {stickers.map(({ id, x, y , sticker}) => (
-          <div key={id} style={{ top: y, left: x }} className="absolute lg:w-50 lg:h-50 w-20 h-20">
-            <img className="lg:w-50 lg:h-50 w-20 h-20" src={sticker} alt="sticker" />
+          <div key={id} style={{ top: y, left: x }} className="absolute lg:w-50 lg:h-50 w-30 h-30">
+            <img className="lg:w-50 lg:h-50 w-30 h-30" src={sticker} alt="sticker" />
           </div>
         ))}
       </div>

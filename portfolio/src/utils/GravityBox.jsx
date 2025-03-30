@@ -120,7 +120,9 @@ const GravityBox = ({ texte }) => {
 
   // Appeler initScene une fois au chargement initial
   useEffect(() => {
-    initScene();
+    setTimeout(()=>{
+      initScene();
+    }, 2000)
 
     // Nettoyer la scène lors du démontage du composant
     return () => {
@@ -182,7 +184,7 @@ const GravityBox = ({ texte }) => {
 
       {/*Texte */}
       <div className="flex w-full h-screen absolute text-center justify-center items-center">
-        <h1  ref={texteRef} className="font-bold text-9xl w-fit">{texte}</h1>
+        <h1  ref={texteRef} className="font-bold text-7xl lg:text-6xl w-1/3 capitalize">{texte}</h1>
       </div>
 
     </div>
