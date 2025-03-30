@@ -4,13 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 const navElement = {
-  "/intership" : "Mon Stage" ,
   "/veille" : "Ma Veille" ,
   "/btssio" : "Le BTS SIO" ,
 }
-
-
-
 
 const Navbar = () => {
 

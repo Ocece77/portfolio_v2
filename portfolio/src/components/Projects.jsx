@@ -9,6 +9,8 @@ import todolistapppreview from "../assets/projetimage/todolistapppreview.jpeg";
 import flynangapreview from "../assets/projetimage/flynangapreview.jpeg";
 import finailypreview from "../assets/projetimage/finailypreview.jpeg";
 import pokedexpreview from "../assets/projetimage/pokedexpreview.jpeg";
+import HighlighterAnimation from '../utils/HighlighterAnimation';
+import GravityBox from '../utils/GravityBox'
 
 const projectsList =  [
   {
@@ -100,10 +102,7 @@ const Projects = () => {
             scrub: 1,
             end: "+=3000",
             }
-
     });
-
-
    }, [])
 
   return (
@@ -112,21 +111,20 @@ const Projects = () => {
       <div ref={projectContainerRef} className='flex h-fit w-fit'>
    
 
-        <div className='panel text-center flex h-screen w-screen items-center justify-center relative'>
+        <div className='panel'>
+        <GravityBox texte={"Hey, regarde un peu ce que j'ai fait !"} groundRemover={window.innerHeight + 50}/>
           {/* Conteneur principal pour les objets 3D */}
-            <div className='relative w-screen h-screen z-10 -bottom-5 md:block hidden'> 
-              {/* Objet 3D Spline */}
+            <div className='flex justify-center items-center w-screen h-screen z-10 '> 
+              {/* Objet 3D Spline
               <div  data-depth="0.9" className='absolute z-10  h-screen w-screen  '>
                 <SplineSmiley />
-              </div>
+              </div> 
+           <h1 className='text-[4em] font-bold w-screen'>Hey, <HighlighterAnimation texte={'regarde'} color='#ffb300' /> un peu que j'ai fait !</h1>
+              */}
 
             </div>
 
-            {/*mobile only */}
-            <div className='md:hidden block'>
-              <h1 className='text-[3em] font-bold w-screen'>Hey, <span className='underline'> regarde </span>un peu que j'ai fais !</h1>
-            </div>
-
+         
           </div>
 
           {/*Panel de projet  */}
@@ -134,7 +132,7 @@ const Projects = () => {
             {      
               projectsList.map((project, i) =>{
                 return(
-                <div key={i} className='panel h-screen w-screen flex items-center justify-center '>
+                <div key={i} className='panel h-screen w-screen flex items-center justify-center bg-white'>
                   <Stickers/>
                   <div className='w-full flex flex-col px-10 gap-3'>
                         {/*Title */}
@@ -145,7 +143,7 @@ const Projects = () => {
 
                         {/*Image */}
                         <div className='flex justify-center lg:h-100 h-80 overflow-hidden '>
-                        <img src={project.image} alt={project.nom} className='w-full object-cover rounded' />
+                          <img src={project.image} alt={project.nom} className='w-full object-cover rounded' />
                         </div>
 
                         {/*Titre & description  */}

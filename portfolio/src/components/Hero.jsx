@@ -1,4 +1,4 @@
-import React, {  useRef } from 'react';
+import React, {  useEffect, useRef } from 'react';
 import Spline3dFlower from '../utils/Spline3dFlower';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -19,6 +19,7 @@ const Hero = () => {
   
   useGSAP(()=>{
 
+    //effet d'elevation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
@@ -34,8 +35,6 @@ const Hero = () => {
         tl.to(layer, { y: -movement, ease: "none" }, 0);
       });
 
-
-
      gsap.fromTo(asset2Ref.current ,
         {translateY:window.innerHeight } ,
         {translateY:"0px", duration: 1 , delay : .7})
@@ -47,54 +46,53 @@ const Hero = () => {
   } , []);
  
 
-
   
 
   return (
-    <div ref={container} className='z-97 w-full h-screen relative overflow-hidden'> 
-    {/*background */}
-    <div ref={asset2Ref}>
-      <BlockBg/>
-    </div>
+   <div ref={container} className='z-97 w-full h-screen relative overflow-hidden'>
 
-      {/* Conteneur principal pour les objets 3D */}
-      <div className='relative w-screen h-screen z-96 -bottom-5'> 
-        {/* Objet 3D Spline */}
-        <div ref={threeDref} data-depth="0.9" className='gsapelement absolute z-90  h-screen w-screen  '>
-          <Spline3dFlower />
-        </div>
+      {/*background */}
+      <div ref={asset2Ref}>
+        <BlockBg/>
       </div>
 
-
-    {/* Texte */}
-    <div className='flex lg:flex-row flex-col justify-between absolute lg:gap-30 bottom-10 px-15 '>
-        <div data-depth="0.2" className=' flex flex-col w-full lg:text-[9.5rem] md:text-[6rem] text-[4rem] font-bold capitalize leading-20 lg:leading-30 text-neutral-900'>
-         
-          <div className='flex'>
-            <h1 ref={Title1Ref}  data-depth="0.9"  className='gsapelement -pb-10'>O
-
-              <span className='letter font-pixelify '>C</span>
-              E</h1>
-            <h1 ref={Title2Ref}  data-depth="0.4"  className='gsapelement text-yellow-400'>
-              <span className='font-rubik'>A</span>
-              <span className='letter font-mono'>N</span>
-              E </h1>
+        {/* Conteneur principal pour les objets 3D */}
+        <div className='relative w-screen h-screen z-96 -bottom-5'> 
+          {/* Objet 3D Spline */}
+          <div ref={threeDref} data-depth="0.9" className='gsapelement absolute z-90  h-screen w-screen  '>
+            <Spline3dFlower />
           </div>
-         
-         <div className='flex'>
-           <h1 data-depth="0.4" className='gsapelement underline text-yellow-400'><span className='font-meaculpa'>K</span>A<span className='letter font-pixelify'>S</span></h1>
-            <h1 data-depth="0.3" className='gsapelement '>I<span className='letter font-pixelify '>N</span><span className='font-rubik'>D</span><span className='letter font-pixelify'>U</span></h1>
-         </div>
-
         </div>
 
-        <div data-depth="0.5"  ref={paragraphRef} className='gsapelement font-mono lftext-[12px] lg:text-sm w-full lg:mt-30 mt-5 '>
-          <p>Developpeuse Full-Stack</p>
-          <p>Etudiante en [BTS SIO].</p>
+
+      {/* Texte */}
+        <div className='flex lg:flex-row flex-col justify-between absolute lg:gap-30 bottom-10 px-15 '>
+          <div data-depth="0.2" className=' flex flex-col w-full lg:text-[9.5rem] md:text-[6rem] text-[4rem] font-bold capitalize leading-20 lg:leading-30 text-neutral-900'>
+          
+            <div className='flex'>
+              <h1 ref={Title1Ref}  data-depth="0.9"  className='gsapelement -pb-10'>O
+
+                <span className='letter font-pixelify '>C</span>
+                E</h1>
+              <h1 ref={Title2Ref}  data-depth="0.4"  className='gsapelement text-yellow-400'>
+                <span className='font-rubik'>A</span>
+                <span className='letter font-mono'>N</span>
+                E </h1>
+            </div>
+          
+          <div className='flex'>
+            <h1 data-depth="0.4" className='gsapelement underline text-yellow-400'><span className='font-meaculpa'>K</span>A<span className='letter font-pixelify'>S</span></h1>
+              <h1 data-depth="0.3" className='gsapelement '>I<span className='letter font-pixelify '>N</span><span className='font-rubik'>D</span><span className='letter font-pixelify'>U</span></h1>
+          </div>
+
+          </div>
+
+          <div data-depth="0.5" ref={paragraphRef} className='gsapelement font-mono lftext-[12px] lg:text-sm w-full lg:mt-30 mt-5 '>
+            <p>Developpeuse Full-Stack</p>
+            <p>Etudiante en [BTS SIO].</p>
+          </div>
+
         </div>
-
-      </div>
-
 
     </div>
 

@@ -7,10 +7,9 @@ import PixelTransition from '../utils/PixelTransition';
 
 const Home = () => {
     
-
   return (
     <div className=" h-full w-full overflow-x-hidden">
-      {/*page transition*/}
+      {/* page transition */}
       <PixelTransition /> 
       <Hero/>
       <Projects/>

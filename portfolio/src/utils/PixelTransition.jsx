@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion} from 'framer-motion';
+import sticker1 from "../assets/smileysticker.png";
 
 
 const animationVariants =  {
@@ -9,11 +10,11 @@ const animationVariants =  {
    },
    open: (i) =>({
     opacity:1,
-    transition : {duration : 0 , delay : 0.2 * i}
+    transition : {duration : 0 , delay : 0.15 * i}
    }) ,
    closed:(i)=>({
     opacity: 0,
-    transition : {duration : 0 , delay : 0.2 * i}
+    transition : {duration : 0 , delay : 0.15 * i}
 
    })
 }
@@ -44,7 +45,7 @@ const PixelTransition = () => {
     return delays.map((rdn, i) =>{
          return (<motion.div 
           key={i} 
-          className='block ' 
+          className='block relative' 
           whileInView="closed"
           viewport={{ once: true }}
           variants={animationVariants} 
@@ -52,6 +53,8 @@ const PixelTransition = () => {
           custom={rdn}
           reducemotion="never" 
           >
+            <img src={sticker1} alt="sticker smiley" className='absolute -rotate-45 -top-18 -left-40 '/>
+
           </motion.div>)
     }) 
   }

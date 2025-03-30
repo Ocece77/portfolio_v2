@@ -20,12 +20,12 @@ const Reveal = ({children , width = "fit-content" , delay = 1}) => {
     <div ref={revealRef} className='relative overflow-hidden'>
       <motion.div
       variants={{
-        hidden : { translateY: -100}, /*En dehors de l'écran  */
+        hidden : { translateY: -400}, /*En dehors de l'écran  */
         visible : { translateY: 0, }/* Visible sur l'écran  */
       }}
       initial = "hidden" //map les key de la variant
       animate = {mainControls}
-      transition={{duration: 3 , delay : delay }}
+      transition={{duration: .5 , delay : delay }}
       >
         {children}
         
