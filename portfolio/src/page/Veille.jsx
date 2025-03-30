@@ -1,15 +1,12 @@
 import React from 'react'
 import PixelBackground from '../utils/PixelBackground'
+import GravityBox from '../utils/GravityBox'
 
 function Veille() {
   return (
     <>
-      <PixelBackground />
-      <div className='h-screen w-screen flex bg-pink-500'>
-         <h1 >MA VEILLE <br /> TECHNOLOGIQUE</h1>
-       </div>
-
-    </>
+      <GravityBox texte={"Veille"}/>
+      </>
 
   )
 }

@@ -11,6 +11,7 @@ import sticker4 from "../assets/bluesmileysticker.png";
 import sticker5 from "../assets/murakamisticker.png";
 import BlockBg from '../utils/BlockBg';
 import { Draggable } from 'gsap/Draggable';
+import GravityBox from '../utils/GravityBox';
 
 const stickersArray = [
   sticker1,
@@ -41,21 +42,22 @@ const Btssio = ()  => {
   return (
     <div>
       <PixelBackground />
-     
       <div id="btssio" ref={btsSioRef} className='h-screen w-screen flex'>
          <div>
            <BlockBg/>
          </div>
-
+        
         <div ref={contentContainerRef} className='flex h-fit w-fit'>
 
 
+
+          {/*
           <div className='panel text-center flex h-screen w-screen items-center justify-center relative '>
                 <img  src={sticker1} alt="sticker" className='draggable-sticker w-50 absolute top-20 left-32 rotate-45'/>
                 <h1 className='text-[3em] font-bold w-screen '>C'est quoi le <span className='underline'> BTS SIO </span> ??</h1>
                 <img src={sticker3} alt="sticker" className='draggable-sticker w-50 absolute bottom-20 right-32 '/>
 
-            </div>
+            </div>*/}
 
 
           </div>
