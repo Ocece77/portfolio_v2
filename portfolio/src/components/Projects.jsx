@@ -90,9 +90,6 @@ const Projects = () => {
    useGSAP(()=>{
     let sections = gsap.utils.toArray(".panel");
 
-
-  
-
       gsap.to(sections, { 
         xPercent: -100 * (sections.length - 1),
         ease: "none",
@@ -143,7 +140,7 @@ const Projects = () => {
                         {/*Title */}
                         <div className='flex  flex-col  text-end'>
                           <h1 className='lg:text-[4em] text-[3em] font-bold'>{project.nom}</h1>
-                          <a  className={`text-[10px] font-mono -mt-1.5 ${project.colorText} hover:opacity-40 transition-all z-100`} href={project.lien} target="_blank">[ Clique ici pour voir le projet ]</a>
+                          <a  className={`text-[10px] font-mono -mt-1.5 ${project.colorText} hover:opacity-40 transition-all z-100 w-fit`} href={project.lien} target="_blank">[ Clique ici pour voir le projet ]</a>
                         </div>
 
                         {/*Image */}

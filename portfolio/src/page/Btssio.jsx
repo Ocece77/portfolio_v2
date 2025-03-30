@@ -46,6 +46,8 @@ const Btssio = ()  => {
               pinSpacing: true,
               scrub: 1,
               end: "+=3000",
+              invalidateOnRefresh: true
+
               }
   
       });
@@ -75,7 +77,7 @@ const Btssio = ()  => {
  
             <div className='panel text-center flex h-screen w-screen items-center justify-center relative  '>
                 <img  src={sticker2} alt="sticker"data-depth="0.4"  className=' draggable-sticker w-50 absolute top-3 left-2 lg:top-20 lg:left-32 rotate-45'/>
-                    <h1 className='lg:text-[3em] text-2xl font-bold w-screen '>C'est une formation de deux ans forme des spécialistes en informatique spécialisés en 
+                    <h1 className='lg:text-[3em] text-2xl font-bold w-screen '>C'est une formation de deux ans formant des spécialistes en informatique spécialisés en 
                     <span className='bg-sky-100 rounded-2xl px-1 relative'>gestion des systèmes et réseaux 
                       <span className='text-[11px] font-mono absolute -bottom-3 right-0 text-sky-700 z-10'>(option SISR)</span>
                        </span> ou en 
