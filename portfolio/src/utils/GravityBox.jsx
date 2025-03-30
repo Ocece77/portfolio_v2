@@ -12,7 +12,8 @@ const GravityBox = ({ texte }) => {
   const sceneRef = useRef(null);
   const engineRef = useRef(null);
   const renderRef = useRef(null);
-  const { Engine, Render, Runner, Bodies, Composite, World , MouseConstraint, Mouse} = Matter;
+  const texteRef =  useRef(null);
+  const { Engine, Render, Runner, Bodies, Composite, World , MouseConstraint, Mouse ,Events} = Matter;
 
   // Fonction pour initialiser la scène
 
@@ -35,7 +36,7 @@ const GravityBox = ({ texte }) => {
       engine: engine,
       options: {
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight *2,
         background: 'transparent',
         wireframes: false,
       },
@@ -45,12 +46,15 @@ const GravityBox = ({ texte }) => {
     // Créer des murs statiques
     // Bodies.rectangle(x, y, width, height, { options });
 
-    const wallLeft = Bodies.rectangle(0, window.innerHeight, 10, window.innerHeight, { isStatic: true, render: { fillStyle: 'green' } });
-    const wallRight = Bodies.rectangle(window.innerWidth , window.innerHeight, 10 , window.innerHeight, { isStatic: true, render: { fillStyle: 'red' } });
-    const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight *.95, window.innerWidth, 1, { isStatic: true, render: { fillStyle: 'white' } });
+    const wallLeft = Bodies.rectangle(0, window.innerHeight, 10, window.innerHeight *2 , { isStatic: true, label: "wallLeft", render: { fillStyle: 'transparent' } });
+    const wallRight = Bodies.rectangle(window.innerWidth , window.innerHeight, 10 , window.innerHeight *2 , { isStatic: true, label: "wallRight", render: { fillStyle: 'transparent' } });
+    const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight *.95, window.innerWidth, 1, { isStatic: true, label: "ground", render: { fillStyle: 'transparent' } });
+    const textBox = Bodies.rectangle(window.innerWidth / 2, window.innerHeight /2, texteRef.current.clientWidth +100, texteRef.current.clientHeight +100 , { isStatic: true, label: "textBox",  render: { fillStyle: 'transparent' } });
+
+
 
     // Ajouter tous les corps au monde
-    Composite.add(world, [wallLeft, wallRight, ground]);
+    Composite.add(world, [wallLeft, wallRight, ground, textBox]);
 
     // Fonction pour créer un sticker
     const createStickers = () => {
@@ -78,7 +82,7 @@ const GravityBox = ({ texte }) => {
     
     const interval = setInterval(() => {
       World.add(world, createStickers());
-    }, 15);
+    }, 5);
 
     setTimeout(()=>{
       clearInterval(interval)
@@ -89,13 +93,19 @@ const GravityBox = ({ texte }) => {
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
       constraint: {
-        stiffness: 0.9,
+        stiffness: 0.8,
         render: { visible: false },
       },
     });
 
+    //Permet de scroll le canvas
+    mouseConstraint.mouse.element.removeEventListener("mousewheel", mouseConstraint.mouse.mousewheel);
+    mouseConstraint.mouse.element.removeEventListener("wheel", mouseConstraint.mouse.mousewheel);
+    mouseConstraint.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.mouse.mousewheel);
+
     // ajout dans le monde du detecteur de mouvement de souris
     World.add(world, mouseConstraint);
+
 
 
     // Exécuter le moteur et le rendu
@@ -122,6 +132,36 @@ const GravityBox = ({ texte }) => {
     };
   }, []);
 
+  // Gérer l'événement de scroll pour supprimer le sol
+ useEffect(() => {
+  const handleScroll = () => {
+    const world = engineRef.current?.world;
+
+    // Si l'utilisateur a scrollé de plus de 100px, on retire le sol
+    if (window.scrollY > 60 && world) {
+      console.log(window.scrollY , world) 
+      // Retirer le sol si il existe déjà
+      const ground = world.bodies.find(body => body.label === "ground");
+      const textBox = world.bodies.find(body => body.label === "textBox");
+
+      console.log(ground)
+      if (ground || textBox) {
+        World.remove(world, ground);
+        World.remove(world, textBox);
+        console.log("Sol retiré");
+      }
+    }
+  };
+
+  // Ajouter l'événement de scroll
+  window.addEventListener('scroll', handleScroll);
+
+  // Nettoyer l'événement lors du démontage du composant
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
   // Gérer le redimensionnement de la fenêtre pour réinitialiser la scène
   useEffect(() => {
     const handleResize = () => {
@@ -137,8 +177,14 @@ const GravityBox = ({ texte }) => {
 
   return (
     <div>
-      <div ref={sceneRef} className="stickers z-99 w-screen h-screen absolute "></div>
-      <h1 className="font-bold text-3xl">{texte}</h1>
+       {/*Scène */}
+      <div ref={sceneRef} className="stickers z-97 w-screen h-screen absolute "></div>
+
+      {/*Texte */}
+      <div className="flex w-full h-screen absolute text-center justify-center items-center">
+        <h1  ref={texteRef} className="font-bold text-9xl w-fit">{texte}</h1>
+      </div>
+
     </div>
   );
 };

@@ -5,7 +5,13 @@ import GravityBox from '../utils/GravityBox'
 function Veille() {
   return (
     <>
-      <GravityBox texte={"Veille"}/>
+      <div className='h-screen w-screen relative '>
+        <GravityBox texte={"Veille"}/>
+      </div>
+      
+      <div  className='h-screen w-screen bg-transparent'>
+         autre element
+      </div>
       </>
 
   )
