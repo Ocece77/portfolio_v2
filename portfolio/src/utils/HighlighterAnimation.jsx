@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PropTypes from 'prop-types';
 
-const HighlighterAnimation = ({ texte , color = "#FF5733"}) => {
+const HighlighterAnimation = ({ texte , color = "#FF5733" , opacity = .2}) => {
   gsap.registerPlugin(ScrollTrigger);
   const textRef = useRef(null);
   const [textRefClientHeight , setTextRefClientHeight] = useState(0);
@@ -56,7 +56,7 @@ const HighlighterAnimation = ({ texte , color = "#FF5733"}) => {
           height: textRefClientHeight,
           width: "var(--highlight-width)", // On anime cette valeur
           backgroundColor: color,
-          opacity: .2,
+          opacity: opacity,
           transition: "width 0.5s ease",
         }}
       ></span>
@@ -68,7 +68,8 @@ const HighlighterAnimation = ({ texte , color = "#FF5733"}) => {
 
 HighlighterAnimation.propTypes ={
   texte : PropTypes.string,
-  color : PropTypes.string
+  color : PropTypes.string,
+  opacity : PropTypes.string,
 }
 
 export default HighlighterAnimation;

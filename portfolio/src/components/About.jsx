@@ -24,6 +24,8 @@ import sticker14 from "../assets/logo/pythonLogo.png";
 import sticker15 from "../assets/logo/reactLogo.png";
 import sticker16 from "../assets/logo/swiftLogo.png";
 import sticker17 from "../assets/logo/tailwindLogo.png";
+import sticker18 from "../assets/rainbowsticker.png";
+
 import Reveal from '../utils/Reveal';
 
 const stickersArray1 = [sticker4, sticker5, sticker6, sticker7 ];
@@ -91,14 +93,13 @@ const About = ()=> {
       </div>
 
      {/* Section description sur moi */}
-      <div className='h-screen w-screen stagesection flex justify-center items-center '>
+      <div className='h-screen w-screen stagesection flex justify-center items-center bg-white'>
              <BlockBg/>
              <img src={sticker2} alt="question bts sio" className='draggable-sticker w-50 absolute top-0 right-0 lg:top-20 lg:left-10 -rotate-12'/>
               <h1 className="font-bold text-5xl text-center lg:w-5/6">
                   Je suis une étudiante en <HighlighterAnimation texte="BTS SIO" color='#00d5ff'/> intéressée par la robotique et <HighlighterAnimation texte="kiffant" color='#7b00ff'/> la <HighlighterAnimation texte="programmation" color='#ffd000'/>  et le  <HighlighterAnimation texte="roller aggressif" color='#0ffa55'/> 
               </h1>
               <img src={sticker3} alt="question pc" className='draggable-sticker w-50 absolute bottom-10 right-10 rotate-12 '/>
-
         </div>
 
        {/* Section photos */}
@@ -116,7 +117,7 @@ const About = ()=> {
               return (
                 <img key={i} src={sticker} alt="sticker Logo"
                   style={{ top: `${i * 40}px`, right: `${i * 300}px` }} 
-                className={`draggable-sticker w-40 absolute otate-1 z-10`}/>
+                className={`draggable-sticker w-40 absolute otate-1 z-50`}/>
               )
             })
           }
@@ -128,7 +129,7 @@ const About = ()=> {
               return (
                 <img key={i} src={sticker} alt="sticker Logo"
                   style={{ top: `-${i*30}px`, left: `${i * 400}px` }} 
-                className={`draggable-sticker w-45 absolute -10`}/>
+                className={`draggable-sticker w-45 absolute z-10`}/>
               )
             })
           }
@@ -150,7 +151,7 @@ const About = ()=> {
               return (
                 <img key={i} src={sticker} alt="sticker Logo"
                   style={{ bottom: `${i * 30}px`, left: `${i * 400}px` }} 
-                className={`draggable-sticker w-40 absolute `}/>
+                className={`draggable-sticker w-40 absolute z-10`}/>
               )
             })
           }
@@ -163,14 +164,25 @@ const About = ()=> {
       </div>
   
       {/* Section mes expériences*/}
-      <div className='h-screen w-screen stagesection overflow-hidden '>
+      <div className='h-screen w-screen stagesection  border-4 bg-zinc-950 border-white'>
          {/* titre de la section => mes expériences*/}
-         <BlockBg/>
+   
 
-          <div className='relative flex flex-col justify-start items-center  pt-30'>
-            <Reveal>
-              <h1 className="font-bold text-5xl lg:text-6xl w-2/3">Et j'ai plein d'expériences <HighlighterAnimation texte="professionelle" color="#ad03fc"/></h1>
+          <div className='relative flex justify-center items-center pt-30 text-white'>
+            <Reveal delay={0.5}>
+              <h1 className="relative font-bold text-5xl lg:text-6xl w-2/3 h-full ">Et j'ai plein d'expériences <HighlighterAnimation texte="professionelle" color="#ad03fc" opacity={1} />
+                <img src={sticker18} alt="rainwbow sticker" className='draggable-sticker w-50  absolute -bottom-10 -right-40 rotate-12'/>
+              </h1>
             </Reveal>
+          </div>
+
+          <div className='w-full h-full py-16 pl-40 '>
+
+                  <div className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm ">
+                    <h1 className="mb-2 text-2xl font-bold tracking-tight ">Experience 1</h1>
+                    <p className="font-normal ">Lorem ipsum dolor sit amet consectetur </p>
+                  </div>
+
           </div>
 
 
