@@ -142,7 +142,7 @@ const Projects = () => {
                         </div>
 
                         {/*Image */}
-                        <div className='flex justify-center lg:h-100 h-80 overflow-hidden '>
+                        <div className='flex justify-center lg:h-100 h-80'>
                           <img src={project.image} alt={project.nom} className='w-full object-cover rounded' />
                         </div>
 
@@ -162,7 +162,8 @@ const Projects = () => {
             }
           
 
-          
+          <div className='panel'></div>
+
 
 
       </div>

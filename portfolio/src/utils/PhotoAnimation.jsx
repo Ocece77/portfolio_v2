@@ -63,7 +63,7 @@ const PhotoAnimation = () => {
     <div ref={photoContainer} className='photo-container h-screen w-screen flex justify-center items-center '>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/3 w-1/3 '>
+        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-1/2 '>
           <img src={face3} alt="face" className='rounded-xl' />
         </div>
       </div>
@@ -72,13 +72,13 @@ const PhotoAnimation = () => {
 
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/3 w-1/3 '>
+        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-1/2 '>
            <img src={face4} alt="face" className='rounded-xl' />
         </div>
       </div>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/3 w-2/5'>
+        <div className='h-1/2 lg:h-1/3 lg:w-2/5 w-1/2'>
           <video autoPlay loop muted preload="auto" className='rounded-xl'>
             <source src={video} type="video/mp4"/>
               <img src={face3} alt='memoji photo'/>
@@ -87,10 +87,13 @@ const PhotoAnimation = () => {
       </div>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/3 w-1/3 '>
+        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-1/2 '>
           <img src={face2} alt="face" className='rounded-xl' />
         </div>
       </div>
+
+      <div className="photo h-full w-full flex justify-center items-center z-10 bg-white"></div>
+
 
     </div>
   );

@@ -7,8 +7,9 @@ import sticker3 from "../assets/cookiesticker.png";
 import sticker4 from "../assets/bluesmileysticker.png";
 import sticker5 from "../assets/murakamisticker.png";
 
+
 const GravityBox = ({ texte , groundRemover = 60 }) => {
-  const stickersArray = [sticker1, sticker2, sticker3, sticker4, sticker5];
+  const stickersArray = [sticker1, sticker2, sticker3, sticker4, sticker5 ];
   const sceneRef = useRef(null);
   const engineRef = useRef(null);
   const renderRef = useRef(null);
@@ -141,12 +142,10 @@ const GravityBox = ({ texte , groundRemover = 60 }) => {
 
     // Si l'utilisateur a scrollé de plus de 100px, on retire le sol
     if (window.scrollY > groundRemover && world) {
-      console.log(window.scrollY , world) 
       // Retirer le sol si il existe déjà
       const ground = world.bodies.find(body => body.label === "ground");
       const textBox = world.bodies.find(body => body.label === "textBox");
 
-      console.log(ground)
       if (ground || textBox) {
         World.remove(world, ground);
         World.remove(world, textBox);
