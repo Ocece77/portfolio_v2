@@ -149,7 +149,7 @@ const Projects = () => {
                         {/*Titre & description  */}
                         <div className='flex lg:flex-row flex-col w-full items-end justify-between lg:gap-0 gap-5'>
                           <p className='font-mono text-sm lg:w-1/3 w-full'>{project.description}</p>
-                          <p className={`font-mono text-sm lg:w-1/5 w-fit rounded p-2 ${project.colorBg} `}>{project.note}</p>
+                          <p className={`font-mono text-sm lg:w-1/5 w-fit rounded p-2 ${project.colorBg}`}>{project.note}</p>
                         </div>
 
                         {/*voir le projet btn */}

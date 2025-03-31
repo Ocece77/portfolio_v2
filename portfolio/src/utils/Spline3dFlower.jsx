@@ -11,17 +11,15 @@ const Spline3dFlower = () => {
   }
 
   return (
-    <div className="overflow-hidden relative h-screen w-screen ">
+    <div className="overflow-hidden relative lg:h-screen  w-screen h-2/3 ">
+      <div className="absolute w-screen h-screen lg:z-50 lg:hidden block left-0">{/*permet d'éviter l'action de la fleur sur tablet/mobile */}</div>
          <Suspense fallback={<div>Loading...</div>}>
-   
-          <Spline 
-              scene="https://prod.spline.design/Ixb2yYBfDobRanjU/scene.splinecode" 
-              onLoad={onLoad}
-            />    
-            
-       </Suspense>
+            <Spline 
+                scene="https://prod.spline.design/Ixb2yYBfDobRanjU/scene.splinecode" 
+                onLoad={onLoad}/>    
+        </Suspense>
 
-      <div className="bg-white  w-49 h-12 rounded-full absolute bottom-4 right-0"></div>
+      <div className="bg-white w-49 h-12 rounded-full absolute bottom-4 right-0"></div>
     </div>
   );
 };

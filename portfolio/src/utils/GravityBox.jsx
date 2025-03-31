@@ -83,7 +83,7 @@ const GravityBox = ({ texte , groundRemover = 60 }) => {
     
     const interval = setInterval(() => {
       World.add(world, createStickers());
-    }, 5);
+    }, 1);
 
     setTimeout(()=>{
       clearInterval(interval)
@@ -183,7 +183,7 @@ const GravityBox = ({ texte , groundRemover = 60 }) => {
 
       {/*Texte */}
       <div className="flex w-full h-screen absolute text-center justify-center items-center">
-        <h1  ref={texteRef} className="font-bold text-7xl lg:text-6xl w-1/2 ">{texte}</h1>
+        <h1  ref={texteRef} className="font-bold text-3xl lg:text-6xl w-1/2 ">{texte}</h1>
       </div>
 
     </div>
@@ -192,7 +192,7 @@ const GravityBox = ({ texte , groundRemover = 60 }) => {
 
 GravityBox.propTypes = {
   texte: PropTypes.string,
-  groundRemover :PropTypes.number,
+  groundRemover: PropTypes.number,
 };
 
 export default GravityBox;

@@ -12,7 +12,7 @@ const Footer = () =>{
     <div className='h-screen w-screen '>
       {/*Collab texte */}
 
-        <div className='h-screen w-screen border-8 bg-amber-400 flex flex-col justify-center items-center'>
+        <div className='h-screen w-screen border-8 bg-amber-400 flex flex-col justify-center items-center md:px-0 px-5'>
           <Reveal>
             <PixelTransition/>
             <h1 className='text-[6em] lg:text-[10em] font-bold lg:leading-25 leading-15 h-fit py-15'>
@@ -37,14 +37,14 @@ const Footer = () =>{
               </Reveal>
 
               <Reveal delay={1.4}>
-                <a className='flex gap-2 items-center hover:text-amber-900 transition-all'  href="https://github.com/oceanekasindu" target="_blank" rel="noopener noreferrer">
+                <a className='flex gap-2 items-center hover:text-amber-900 transition-all'  href="https://github.com/ocece77" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} size="2x" />
                     Github
                 </a>
               </Reveal>
 
               <Reveal delay={1.6}>
-                <a className='flex gap-2 items-center hover:text-amber-900 transition-all'  href="https://www.instagram.com/oceanekasindu" target="_blank" rel="noopener noreferrer">
+                <a className='flex gap-2 items-center hover:text-amber-900 transition-all'  href="https://www.instagram.com/lostine196" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                     Instagram
                 </a>
@@ -54,7 +54,6 @@ const Footer = () =>{
 
         </div>  
 
- 
 
     </div>
 
