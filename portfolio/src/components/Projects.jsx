@@ -9,8 +9,9 @@ import todolistapppreview from "../assets/projetimage/todolistapppreview.jpeg";
 import flynangapreview from "../assets/projetimage/flynangapreview.jpeg";
 import finailypreview from "../assets/projetimage/finailypreview.jpeg";
 import pokedexpreview from "../assets/projetimage/pokedexpreview.jpeg";
-import HighlighterAnimation from '../utils/HighlighterAnimation';
 import GravityBox from '../utils/GravityBox'
+import sticker1 from "../assets/smileysticker.png";
+import sticker4 from "../assets/cookiesticker.png";
 
 const projectsList =  [
   {
@@ -110,24 +111,23 @@ const Projects = () => {
     <div id="projects" ref={mainRef} className='h-screen w-screen flex'>
       <div ref={projectContainerRef} className='flex h-fit w-fit'>
    
-
-        <div className='panel'>
+        {/*première page - pc only */}
+        <div className='panel lg:block hidden'>
         <GravityBox texte={"Hey, regarde un peu ce que j'ai fait !"} groundRemover={window.innerHeight + 50}/>
           {/* Conteneur principal pour les objets 3D */}
             <div className='flex justify-center items-center w-screen h-screen z-10 '> 
-              {/* Objet 3D Spline
-              <div  data-depth="0.9" className='absolute z-10  h-screen w-screen  '>
-                <SplineSmiley />
-              </div> 
-           <h1 className='text-[4em] font-bold w-screen'>Hey, <HighlighterAnimation texte={'regarde'} color='#ffb300' /> un peu que j'ai fait !</h1>
-              */}
-
             </div>
-
-         
           </div>
 
-          {/*Panel de projet  */}
+         {/* première page - mobile only*/}
+          <div className='panel lg:hidden flex justify-center items-center h-screen w-screen'>
+            <img src={sticker1} alt="smiley" className='w-50 absolute bottom-10 right-10 rotate-12' />
+            <h1 className='text-[3em] font-black px-5 text-center z-20'>Hey, regarde un peu ce que j'ai fait !</h1>
+            <img src={sticker4} alt="" className='w-50 absolute top-10 left-10 rotate-12' />
+          </div>
+
+
+          {/*Panel de projet*/}
             <h1 className='absolute left-10 top-50 z-1 animate-pulse font-mono text-[12px]'>[clique <br/> n'importe où.]</h1>
             {      
               projectsList.map((project, i) =>{

@@ -7,10 +7,11 @@ import PropTypes from 'prop-types';
 //Reveal animation
 // eslint-disable-next-line no-unused-vars
 const Reveal = ({children , width = "fit-content" , delay = 1}) => {
+  
   const revealRef = useRef(null);
   const isInView = useInView(revealRef,  {once : true}) // once true afin que l'animation agit qu'une seule fois
-  
   const mainControls = useAnimation();
+
   useEffect(()=>{
    if (isInView){
    mainControls.start("visible")
