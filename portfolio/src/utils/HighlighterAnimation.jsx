@@ -8,6 +8,7 @@ const HighlighterAnimation = ({ texte , color = "#FF5733" , opacity = .2}) => {
   gsap.registerPlugin(ScrollTrigger);
   const textRef = useRef(null);
   const [textRefClientHeight , setTextRefClientHeight] = useState(0);
+
   useGSAP(() => {
     const highlight = textRef.current;
     if (!highlight) return; // Sécurité si l'élément n'est pas encore chargé
@@ -40,13 +41,13 @@ const HighlighterAnimation = ({ texte , color = "#FF5733" , opacity = .2}) => {
   return (
     <span
       ref={textRef}
-      className="text-highlight z-20 "
+      className="text-highlight"
       style={{
         position: "relative",
         display: "inline-block",
       }}
     >
-      {texte}
+     {texte}
       <span
         className="highlight-bar rounded -z-10"
         style={{

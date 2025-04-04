@@ -18,7 +18,7 @@ const Reveal = ({children , width = "fit-content" , delay = 1}) => {
    }
   }, [isInView, mainControls])
   return (
-    <div ref={revealRef} className='relative overflow-hidden'>
+    <div ref={revealRef} className='relative overflow-hidden h-fit'>
       <motion.div
       variants={{
         hidden : { translateY: -400}, /*En dehors de l'écran  */

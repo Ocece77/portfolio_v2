@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-    <Router basename="/portfolio_v2">{/*basename="/portfolio_v2"*/}
+    <Router >{/*basename="/portfolio_v2"*/}
       <Routes>
         <Route path = "/" element = {<MainLayout/> }>
           <Route index path="/" element={<Home />} />

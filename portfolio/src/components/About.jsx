@@ -27,6 +27,7 @@ import sticker17 from "../assets/logo/tailwindLogo.png";
 import sticker18 from "../assets/rainbowsticker.png";
 
 import Reveal from '../utils/Reveal';
+import ChangeNavColor from '../context/ChangeNavColor';
 
 const stickersArray1 = [sticker4, sticker5, sticker6, sticker7 ];
 const stickersArray2 = [sticker8, sticker9, sticker10 ];
@@ -90,6 +91,7 @@ const About = ()=> {
 
   gsap.registerPlugin(ScrollTrigger ,Draggable);
   const stageSectionRef = useRef(null);
+   
 
   useGSAP(() => {
     Draggable.create(".draggable-sticker");
@@ -220,103 +222,103 @@ const About = ()=> {
     
           <div className='relative flex justify-center items-center pt-10 px-5 text-white h-fit'>
             <Reveal delay={0.5}>
-              <h1 className="relative font-bold text-4xl lg:text-6xl lg:w-2/3 h-full lg:px-0 px-10 ">Et j'ai plein d'expériences 
+              <h1 className="relative font-bold text-4xl lg:text-6xl lg:w-2/3 h-full lg:px-0  ">Et j'ai plein d'expériences 
                 <HighlighterAnimation texte="professionelle" color="#ad03fc" opacity={1} />
                 <img src={sticker18} alt="rainwbow sticker" className='draggable-sticker w-20 lg:w-50 lg:absolute -bottom-10 -right-40 rotate-12'/>
               </h1>
             </Reveal>
           </div>
 
-          <div className='w-full h-fit lg:py-16 px-20  items-center flex lg:flex-row flex-col gap-4 text-white font-mono justify-center'>
-                    {/*expérience */}
+          <ChangeNavColor>
+            <div className='w-screen h-full px-10 gap-5 items-center flex lg:flex-row flex-col  text-white font-mono justify-center'>
+                      {/*expérience */}
 
-                  <div className='flex flex-col gap-5 '>
+                    <div className='flex flex-col gap-5 '>
+                      {/*ma scolarité */}
+                      <p>Expérience professionelle</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="experience"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-amber-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className="font-normal text-sm ">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                    <div className='flex flex-col gap-5'>        
                     {/*ma scolarité */}
-                    <p>Expérience professionelle</p>
-                     {
-                      experienceArray.map((experience , i)=>{
-                        if (experience.label =="experience"){
-                          return (
-                            <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-amber-200 transition-all">
-                              <h1 className="mb-2 text-2xl font-bold tracking-tight">{experience.nom}</h1>
-                              <p className="font-normal">{experience.description}</p>
-                            </div>
-                          )
-                        }
-                      })
-                     }
-                   </div>
+                    <p>Mon parcours scolaire</p>
 
-                  <div className='flex flex-col gap-5'>        
-                  {/*ma scolarité */}
-                  <p>Mon parcours scolaire</p>
-
-                   {
-                      experienceArray.map((experience , i)=>{
-                        if (experience.label =="scolaire"){
-                          return (
-                            <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-sky-200 transition-all">
-                              <h1 className="mb-2 text-2xl font-bold tracking-tight">{experience.nom}</h1>
-                              <p className="font-normal">{experience.description}</p>
-                            </div>
-                          )
-                        }
-                      })
-                    }
-                  </div>
-
-                  <div className='flex flex-col gap-5'>        
-                    {/* mes expérience associatifs */}
-                    <p>Mes expériences associatifs</p>
                     {
-                      experienceArray.map((experience , i)=>{
-                        if (experience.label =="associatif"){
-                          return (
-                            <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-green-200 transition-all">
-                              <h1 className="mb-2 text-2xl font-bold tracking-tight">{experience.nom}</h1>
-                              <p className="font-normal">{experience.description}</p>
-                            </div>
-                          )
-                        }
-                      })
-                     }
-                  </div>
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="scolaire"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-sky-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
 
-                  <div className='flex flex-col gap-5'>        
-                    {/*mes prix */}
-                    <p>Mes prix et distinctions</p>
-                    {
-                      experienceArray.map((experience , i)=>{
-                        if (experience.label =="prix"){
-                          return (
-                            <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-pink-200 transition-all">
-                              <h1 className="mb-2 text-2xl font-bold tracking-tight">{experience.nom}</h1>
-                              <p className="font-normal">{experience.description}</p>
-                            </div>
-                          )
-                        }
-                      })
-                     }
-                  </div>
+                    <div className='flex flex-col gap-5 '>        
+                      {/* mes expérience associatifs */}
+                      <p>Mes expériences associatifs</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="associatif"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-green-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
 
-                  <div className='flex flex-col gap-5'>        
-                    {/*mes certifications */}
-                    <p>Mes certifications</p>
-                    {
-                      experienceArray.map((experience , i)=>{
-                        if (experience.label =="certification"){
-                          return (
-                            <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-red-200 transition-all">
-                              <h1 className="mb-2 text-2xl font-bold tracking-tight">{experience.nom}</h1>
-                              <p className="font-normal">{experience.description}</p>
-                            </div>
-                          )
-                        }
-                      })
-                     }
-                  </div>
-            </div>
-                
+                    <div className='flex flex-col gap-5 '>        
+                      {/*mes prix */}
+                      <p>Mes prix et distinctions</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="prix"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 w-80 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-pink-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                       <p>Mes certifications</p>
+
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="certification"){
+                            return (
+                              <div key={i} className="block max-w-sm  p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-red-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                 
+              </div>
+          </ChangeNavColor>
           </div>
 
         </div>

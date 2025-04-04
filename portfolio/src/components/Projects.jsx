@@ -59,7 +59,13 @@ const projectsList =  [
   },
 
 
-  {
+]
+
+/**
+ * 
+ * 
+ * 
+ *   {
     nom : "I not Hungry",
     note : "Projet perso",
     description : "Générer des recettes grâce à des emojis ou des image du frigo",
@@ -69,7 +75,6 @@ const projectsList =  [
     colorText : "text-sky-500"
   },
   
-
   {
     nom : "Finaily AI",
     note : "Projet perso",
@@ -80,9 +85,7 @@ const projectsList =  [
     colorText : "text-purple-500"
   },
   
-
-
-]
+ */
 const Projects = () => {
 
   gsap.registerPlugin(ScrollTrigger);
@@ -160,10 +163,6 @@ const Projects = () => {
       
               })
             }
-          
-
-
-
 
       </div>
 

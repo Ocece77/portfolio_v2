@@ -68,25 +68,24 @@ const Hero = () => {
             <Spline3dFlower />
           </div>
 
-          <div  className='lg:hidden'>
-            <div className=' grid grid-cols-4 items-center  md:pt-10 pt-30 w-full h-1/3 '>
+          <div  className='lg:hidden -pt-20'>
+            <div className=' grid md:grid-cols-4 grid-cols-2 items-center md:pt-10'>
                       <div className='flex items-end md:py-10' >
-                        <img src={sticker1} alt="smiley" className='object-contain'/>
+                        <img src={sticker1} alt="smiley" className='object-contain w-3/4'/>
                         </div>
                       <div className='flex h-full items-start md:py-10'>
-                        <img src={sticker2} alt="smiley"  className='object-contain'/>
+                        <img src={sticker2} alt="powerpuff"  className='object-contain w-3/4'/>
                         </div>
-                      <div className='flex h-full md:py-10 -mt-10'>
-                        <img src={sticker3} alt="smiley" className='object-contain -mt-10'/>
+                      <div className='flex h-full md:py-10 md:-mt-10'>
+                        <img src={sticker3} alt="rainbow" className='object-contain md:-mt-10 w-3/4'/>
                         </div>
-                      <div className='flex h-full items-start md:pt-30 -mt-10'>
-                        <img src={sticker4} alt="smiley" className='object-contain'/>
+                      <div className='flex h-full items-start md:pt-30 md:-mt-10 w-3/4'>
+                        <img src={sticker4} alt="cookie" className='object-contain'/>
                         </div>
             </div>
             {/* Texte pc */}
             <div className='block ps-10'>
-
-                      <div className='flex flex-col md:flex-row md:text-8xl  text-6xl pt-20'>
+                      <div className='flex flex-col md:text-9xl text-8xl pt-10'>
                         
                         <div className='flex'>
                             <h1 className='-pb-10'>O
@@ -105,8 +104,9 @@ const Hero = () => {
                         
                       </div>
 
-                      <div className='font-mono '>
-                        <p>Développeuse Full-Stack - Etudiante en [BTS SIO].</p>
+                      <div className='font-mono text-sm pt-5'>
+                        <p>Développeuse Full-Stack</p>
+                         <p>Etudiante en [BTS SIO].</p>
                       </div>
 
              </div>

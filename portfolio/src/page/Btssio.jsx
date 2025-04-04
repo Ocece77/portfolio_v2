@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import PixelTransition from '../utils/PixelTransition'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
@@ -8,9 +8,14 @@ import sticker2 from "../assets/rainbowsticker.png";
 import sticker3 from "../assets/cookiesticker.png";
 import sticker4 from "../assets/bluesmileysticker.png";
 import sticker5 from "../assets/murakamisticker.png";
+import sticker6 from "../assets/emojiquestion.png";
+import sticker7 from "../assets/btssioLogo.png";
+import sticker8 from "../assets/pcLogo.png";
 import BlockBg from '../utils/BlockBg';
 import { Draggable } from 'gsap/Draggable';
 import HighlighterAnimation from '../utils/HighlighterAnimation';
+import Reveal from '../utils/Reveal';
+import { NavContext } from '../context/NavProvider';
 
 const stickersArray = [
   sticker1,
@@ -26,6 +31,8 @@ const Btssio = ()  => {
 
   const btsSioRef = useRef(null);
   const contentContainerRef = useRef(null);
+  const { onDarkBg, toggleColor } = useContext(NavContext); // savoir si le background et sombre
+
 
 
    useGSAP(()=>{
@@ -49,6 +56,8 @@ const Btssio = ()  => {
 
    }, []);
 
+   
+
   return (
     <div>
       <PixelTransition />
@@ -61,12 +70,12 @@ const Btssio = ()  => {
           <h1 className='absolute left-10 top-50 z-1 font-mono text-[12px] w-fit bg-amber-100 rounded p-1 lg:block hidden opacity-40 animate-pulse'>[Déplace <br/> les stickers]</h1>
 
   
-          <div className='panel text-center flex h-screen w-screen items-center justify-center relative '>
-                <img src={sticker5} alt="sticker" className='draggable-sticker w-50 absolute -top-20 -right-10  lg:-top-20 lg:right-10 -rotate-12'/>
-                <img  src={sticker1} alt="sticker"data-depth="0.4"  className='draggable-sticker w-50 absolute top-20 lg:left-32 -left-10 rotate-45'/>
+            <div className='panel text-center flex h-screen w-screen items-center justify-center relative '>
+                <img src={sticker7} alt="sticker" className='draggable-sticker w-50 absolute -top-20 -right-10  lg:-top-20 lg:right-10 -rotate-12'/>
+                <img  src={sticker6} alt="sticker"data-depth="0.4"  className='draggable-sticker w-50 absolute top-20 lg:left-32 -left-10 rotate-45'/>
                 <h1 className='text-[3em] font-bold w-screen '>C'est quoi le <HighlighterAnimation texte="BTS SIO" color='#6fff00'/> ??</h1>
-                <img src={sticker3} alt="sticke cookie" className='draggable-sticker w-50 absolute lg:bottom-20 lg:right-32 bottom-10'/>
-                <img src={sticker2} alt="sticker rainbow" className='draggable-sticker w-50 absolute -bottom-10 lg:left-20  -right-20 rotate-12 '/>
+                <img src={sticker6} alt="sticke cookie" className='draggable-sticker w-50 absolute lg:bottom-20 lg:right-32 bottom-10'/>
+                <img src={sticker8} alt="sticker rainbow" className='draggable-sticker w-50 absolute -bottom-10 lg:left-20  -right-20 rotate-12 '/>
 
             </div>
  
@@ -85,6 +94,35 @@ const Btssio = ()  => {
                 <img src={sticker3} alt="sticker" className='draggable-sticker w-50 absolute top-0 right-0 lg:top-20 lg:right-100 '/>
                 <img src={sticker4} alt="sticker" className='draggable-sticker w-50 absolute bottom-0 right-32 lg:bottom-20 lg:right-32 '/>
             </div>
+
+            <div className='panel text-center flex h-screen w-screen items-center justify-center relative '>
+                <img src={sticker6} alt="sticker" className='draggable-sticker w-50 absolute -top-20 -right-10  lg:-top-20 lg:right-10 -rotate-12'/>
+                <img  src={sticker7} alt="sticker"data-depth="0.4"  className='draggable-sticker w-50 absolute top-20 lg:left-32 -left-10 rotate-45'/>
+                <h1 className='text-[3em] font-bold w-screen '>Il prépare à des métiers comme <HighlighterAnimation texte="développeur" color='#eb3486'/> , <HighlighterAnimation texte="administrateur réseau" color='#ffd900'/>  ou technicien IT, avec des débouchés en entreprise ou en poursuite d’études.</h1>
+                <img src={sticker8} alt="sticker cookie" className='draggable-sticker w-50 absolute lg:bottom-20 lg:right-32 bottom-10'/>
+                <img src={sticker5} alt="sticker rainbow" className='draggable-sticker w-50 absolute -bottom-10 lg:left-20  -right-20 rotate-12 '/>
+            </div>
+
+            <div className='panel flex h-screen w-screen items-center justify-center relative flex-col gap-10 pt-20'>
+                <img  src={sticker7} alt="sticker"data-depth="0.4"  className='draggable-sticker w-50 absolute top-20 lg:left-32 -left-10 rotate-45'/>
+                <h1 className=' text-center text-[3em] font-bold w-screen '>Après un BTS SIO, plusieurs options s'offrent aux étudiants pour <HighlighterAnimation texte="continuer les études" color='#37ff00'/> et se spécialiser <HighlighterAnimation texte="davantage" /></h1>
+                 <ul className='font-semibold font-mono text-2xl list-disc bg-amber-100 '>
+                  <li>Licence professionnelle (Bac +3)</li>
+                  <li>Bachelor (Bac +3)</li>
+                  <li>Écoles d’ingénieurs en informatique (Bac +5)</li>
+                  <li> Master universitaire (Bac +5)</li>
+                 </ul>
+                <img src={sticker8} alt="sticker cookie" className='draggable-sticker w-50 absolute lg:bottom-20 lg:right-32 bottom-10'/>
+            </div>
+
+            <div className='panel flex h-screen w-screen items-center justify-center relative '>
+                  <Reveal>
+                    <h1 className=' text-center text-[3em] font-bold w-screen '><HighlighterAnimation texte="Intéressé(e)" color='#fa6A00'/> - Clique <a href='https://www.btsinfo.fr/' className='underline'> ici</a> pour en savoir <HighlighterAnimation texte="plus"color='#7b00ff' /></h1>
+                  </Reveal>
+            </div>
+
+
+
 
           </div>
 
