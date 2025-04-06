@@ -87,7 +87,7 @@ const GravityBox = ({ texte , groundRemover = 60 }) => {
 
     setTimeout(()=>{
       clearInterval(interval)
-    } , 1000);
+    } , 1500);
 
     // evenement sur le mouvement de la souris
     const mouse = Mouse.create(render.canvas);

@@ -78,7 +78,7 @@ const PhotoAnimation = () => {
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
         <div className='h-1/2 lg:h-1/3 lg:w-2/5 w-100'>
-          <video autoPlay loop muted preload="auto" className='rounded-xl' >
+          <video autoPlay loop muted preload="auto" className='rounded-xl  pointer-events-none' playsInline={true}>
             <source src={video} type="video/mp4"/>
               <img src={face3} alt='memoji photo'/>
         </video>

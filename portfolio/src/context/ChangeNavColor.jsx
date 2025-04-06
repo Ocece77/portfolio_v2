@@ -10,16 +10,17 @@ import { NavContext } from './NavProvider';
 const ChangeNavColor = ({children}) => {
   const { onDarkBg, toggleColor } = useContext(NavContext);
   const changeNavColorRef = useRef(null);
-  const isInView = useInView(changeNavColorRef,  {once : false}) // once false afin que l'animation agit  plusieurs fois
+  const isInView = useInView(changeNavColorRef,  {once : false}) // once false afin que l'animation agit plusieurs fois
 
   useEffect(()=>{
 
    if (isInView){
     toggleColor(!onDarkBg)
    } else {
-    toggleColor(!onDarkBg); // Quand l'élément sort de la vue
+    toggleColor(false); // Quand l'élément sort de la vue
    }
   }, [isInView])
+  
   return (
     <div ref={changeNavColorRef} className='h-fit w-fit'>
         {children}

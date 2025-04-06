@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Reveal from '../utils/Reveal'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faInstagram, faFilesPinwheel } from "@fortawesome/free-brands-svg-icons";
 import sticker1 from "../assets/smileysticker.png";
-import { NavContext } from '../context/NavProvider';
 import ChangeNavColor from '../context/ChangeNavColor';
-
+import cvPDF from "../assets/CV_FORMATION_KASINDU_OCEANE-2.pdf";
 
 const Footer = () =>{
   
@@ -48,6 +47,14 @@ const Footer = () =>{
                   <a className='flex gap-2 items-center hover:text-amber-900 transition-all text-sm'  href="https://www.instagram.com/lostine196" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faInstagram} size="2x" />
                       Instagram
+                  </a>
+                </Reveal>
+
+
+                <Reveal delay={1.6}>
+                  <a className='flex gap-2 items-center hover:text-amber-900 transition-all text-sm'  href={cvPDF} target="_blank" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faFilesPinwheel} size="2x" />
+                      Voir mon cv
                   </a>
                 </Reveal>
               
