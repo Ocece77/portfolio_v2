@@ -41,7 +41,7 @@ const ImageTrack = () => {
         trigger: trackContainerRef.current,
         pin: trackRef.current,
         scrub: 1,
-        end: '+=2500',
+        end: '+=2300',
    
  
       },
@@ -53,7 +53,7 @@ const ImageTrack = () => {
         ref={trackRef}
         className="flex h-[200vh] w-screen "
       >
-       <div ref={trackContainerRef}  className='flex w-screen h-screen items-center justify-start ps-50  gap-[1vmin] '>
+       <div ref={trackContainerRef}  className='flex w-screen h-screen items-center justify-start ps-40 gap-[1vmin] '>
        {robotImages.map((img, i) => (
           <img
             key={i}
