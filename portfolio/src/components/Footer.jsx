@@ -15,7 +15,7 @@ const Footer = () =>{
       <div className='h-screen w-screen '>
         {/*Collab texte */}
 
-          <div className='h-screen w-screen border-8 bg-amber-400 flex flex-col justify-center items-center md:px-0 px-5'>
+          <div className='h-screen w-screen border-8 bg-amber-400 flex flex-col justify-center items-center md:px-0 px-5 '>
             <Reveal>
               <h1 className='text-[6em] lg:text-[10em] font-bold lg:leading-25 leading-15 h-fit py-15'>
                 

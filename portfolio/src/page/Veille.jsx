@@ -15,6 +15,7 @@ import figure from "../assets/robots/figure02.jpg";
 import gr2 from "../assets/robots/gr2.jpg";
 import neo from "../assets/robots/onex.jpeg";
 import optimus from "../assets/robots/optimus.jpeg";
+import ImageTrack from '../utils/ImageTrack';
 
 const Veille = () => {
 
@@ -129,13 +130,10 @@ const Veille = () => {
 
        {/*troisième page - contenue de la veille*/}
        <ChangeNavColor>
-        <div className='relative h-fit w-screen pb-80 flex flex-col gap-10 justify-center overflow-x-hidden bg-black  text-white'>
-
-
-        <div className='bg-black -z-10 h-screen w-screen absolute'> {/*background */}</div>  
+        <div className='relative h-fit w-screen pb-80 flex flex-col justify-center overflow-x-hidden bg-black  text-white'>
 
            {/*vidéo d'intro */}
-             <div className='flex flex-col relative h-screen w-screen'>
+             <div className='flex flex-col relative h-screen w-screen z-40 '>
 
                 <div className='px-5 text-center md:hidden block pt-10'>
                       <h1 className='lg:hidden block text-6xl font-black z-20 py-10'>Ma Veille technologique</h1>
@@ -158,22 +156,20 @@ const Veille = () => {
               </div>
 
              {/*Description de la veille*/}
-              <div className='text-center lg:pt-0 pt-20 lg:p-40  font-mono '>
+              <div className='h-fit  text-center lg:pt-0 py-20 lg:p-40 font-mono bg-black z-40  -mt-10'>
                 <Reveal>
                   <p>
                     Les avancées récentes dans la robotique, notamment avec les robots humanoïdes comme Figure et Optimus de Tesla, marquent un tournant majeur dans l'intégration de l'intelligence artificielle et de la robotique dans nos vies quotidiennes. Ces technologies promettent de transformer non seulement l'industrie, mais aussi nos maisons intelligentes de demain.
                   </p>
                 </Reveal>
-       
               </div>
           
               {/*présentation de optimus */}
-              <div className='h-screen w-screen text-white pb-10'>
-              </div>
+                <ImageTrack/>
          
 
                 {/*plus d'articles */}
-                <div className='text-white z-40 '>
+                <div className='h-screen text-white z-40 bg-black pt-32'>
                   <div className='flex flex-col gap-10 '>
 
                     <div className='lg:ps-20 px-5'>
