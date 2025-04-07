@@ -5,9 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BlockBg from '../utils/BlockBg';
 import sticker1 from "../assets/smileysticker.png";
-import sticker2 from "../assets/powerpufflogo.png";
-import sticker3 from "../assets/rainbowsticker.png";
-import sticker4 from "../assets/cookiesticker.png";
+
 
 const Hero = () => {
 
@@ -68,50 +66,22 @@ const Hero = () => {
             <Spline3dFlower />
           </div>
 
-          <div  className='lg:hidden -pt-20'>
-            <div className=' grid md:grid-cols-4 grid-cols-2 items-center md:pt-10'>
-                      <div className='flex items-end md:py-10' >
-                        <img src={sticker1} alt="smiley" className='object-contain w-3/4'/>
-                        </div>
-                      <div className='flex h-full items-start md:py-10'>
-                        <img src={sticker2} alt="powerpuff"  className='object-contain w-3/4'/>
-                        </div>
-                      <div className='flex h-full md:py-10 md:-mt-10'>
-                        <img src={sticker3} alt="rainbow" className='object-contain md:-mt-10 w-3/4'/>
-                        </div>
-                      <div className='flex h-full items-start md:pt-30 md:-mt-10 w-3/4'>
-                        <img src={sticker4} alt="cookie" className='object-contain'/>
-                        </div>
-            </div>
-            {/* Texte pc */}
-            <div className='block ps-10'>
-                      <div className='flex flex-col md:text-9xl text-8xl pt-10'>
-                        
-                        <div className='flex'>
-                            <h1 className='-pb-10'>O
-                              <span className='letter font-pixelify'>C</span>
-                              E</h1>
-                            <h1   className='text-yellow-400'>
-                              <span className='font-rubik'>A</span>
-                              <span className='letter font-mono'>N</span>
-                              E </h1>
-                        </div>
-                        
-                        <div className='flex'>
-                          <h1 className='underline text-yellow-400'><span className='font-meaculpa'>K</span>A<span className='letter font-pixelify'>S</span></h1>
-                            <h1>I<span className='letter font-pixelify '>N</span><span className='font-rubik'>D</span><span className='letter font-pixelify'>U</span></h1>
-                        </div>
-                        
-                      </div>
+          <div  className='relative lg:hidden -pt-2 flex flex-col '>
+                {/* Image tablet et mobile  */}
+             <div className='lg:hidden flex justify-center items-center z-90 animate-bounce w-full' >
+               <img src={sticker1} alt="smiley" className=' object-cover w-1/2'/>
+              </div>
 
-                      <div className='font-mono text-sm pt-5'>
-                        <p>Développeuse Full-Stack</p>
-                         <p>Etudiante en [BTS SIO].</p>
-                      </div>
-
+            {/* Nom & prénom  */}
+            <div className=' text-center'>
+                   <div className='flex flex-col justify-center px-20'>
+                     <h1 className=' text-6xl font-bold'>Océane <span className='font-pixelify'>KASINDU</span></h1>
+                     <p>Développeuse Full-Stack - Etudiante en [BTS SIO]</p>
+                   </div>
              </div>
-          </div>
+           
 
+          </div>
         </div>
 
 
@@ -119,7 +89,7 @@ const Hero = () => {
       {/* Texte tablet/mobile */}
         <div className='hidden lg:flex flex-row justify-between absolute lg:gap-30 gap-10 bottom-10 lg:px-15 px-5 lg:pb-0 pb-10 '>
 
-          <div className='flex flex-col w-full lg:text-[10rem] md:text-[9rem] text-[5rem] font-bold capitalize leading-40 md:leading-35 lg:leading-30 text-neutral-900 '>
+          <div className='flex flex-col w-full lg:text-[10rem] md:text-[9rem] text-[3rem] font-bold capitalize leading-40 md:leading-35 lg:leading-30 text-neutral-900 '>
           
           <div className='flex'>
               <h1 ref={Title1Ref}  data-depth="0.9" className='gsapelement -pb-10'>O

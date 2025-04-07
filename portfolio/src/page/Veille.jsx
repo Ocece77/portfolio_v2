@@ -9,9 +9,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Reveal from '../utils/Reveal'
 import { NavContext } from '../context/NavProvider';
 import ChangeNavColor from '../context/ChangeNavColor';
-import optimusbots from '../assets/robots/optimus_by_tesla.jpeg'
-import videoOptimus from "../assets/video/video_bot_optimus.mp4";
-import videoFigure from "../assets/video/figure_02_video.mp4";
+import videoOptimus from "../assets/video/figure_02_video.mp4";
+import atlas from "../assets/robots/atlas.jpg";
+import figure from "../assets/robots/figure02.jpg";
+import gr2 from "../assets/robots/gr2.jpg";
+import neo from "../assets/robots/onex.jpeg";
+import optimus from "../assets/robots/optimus.jpeg";
 
 const Veille = () => {
 
@@ -85,9 +88,9 @@ const Veille = () => {
     })
 
     tl.to(".titre" , {
-      scale: 120,
+      scale: 90,
       xPercent : -120,
-      transformOrigin: "53% 50%"
+      transformOrigin: "50% 50%"
     })
 
   },[]);
@@ -112,7 +115,7 @@ const Veille = () => {
          </div>
         
       {/*pc(ordinateur) seulement*/}
-      <div className='h-screen w-screen relative lg:block hidden  overflow-y-visible'>
+      <div className='h-screen w-screen relative md:block hidden  overflow-y-visible'>
         <div className='h-[200vh]'>
          <GravityBox texte={"Ma Veille technologique"}/>
         </div>
@@ -120,31 +123,42 @@ const Veille = () => {
 
       
        {/*deuxième page - titre de la veille*/}
-      <div ref={veilleTitreRef} className='h-screen w-screen bg-transparent md:flex hidden justify-center items-center -z-20  overflow-x-hidden'>
-         <h1 className='titre font-bold text-8xl'>Les Robots Humanoïde</h1>
+      <div ref={veilleTitreRef} className='h-screen w-screen bg-transparent md:flex hidden justify-center items-center -z-20 overflow-x-hidden'>
+         <h1 className='titre font-bold lg:text-8xl text-6xl'>Les Robots Humanoïdes</h1>
       </div>
 
        {/*troisième page - contenue de la veille*/}
        <ChangeNavColor>
-        <div className='relative h-fit w-screen pb-80 flex flex-col justify-center overflow-x-hidden bg-black  text-white'>
+        <div className='relative h-fit w-screen pb-80 flex flex-col gap-10 justify-center overflow-x-hidden bg-black  text-white'>
 
 
         <div className='bg-black -z-10 h-screen w-screen absolute'> {/*background */}</div>  
 
            {/*vidéo d'intro */}
-             <div className='relative h-screen w-screen'>
-              <div className='absolute  z-20 px-20 top-80 w-fit'>
-                <h1 className='text-5xl font-semibold'>
-                  Les Robots Humanoïdes de Demain : <br/> 
-                  <HighlighterAnimation texte={"Figure"} color='#328fa8' opacity={1}/> et <HighlighterAnimation texte={"Optimus"} color='#328fa8' opacity={1}/> Redéfinissent la Robotique Domestique
-                </h1>
-              </div>
-                <video autoPlay loop muted preload="auto" className='rounded-xl absolute inset-x-0 top-0 pointer-events-none' playsInline={true} >
+             <div className='flex flex-col relative h-screen w-screen'>
+
+                <div className='px-5 text-center md:hidden block pt-10'>
+                      <h1 className='lg:hidden block text-6xl font-black z-20 py-10'>Ma Veille technologique</h1>
+                  </div>
+                    
+
+                {/*vidéo */}
+                <video autoPlay loop muted preload="auto" className='lg:absolute h-screen inset-x-0 top-0 pointer-events-none' playsInline={true} >
                     <source src={videoOptimus} type="video/mp4"/>
                 </video>
+
+                 {/*Titre du thème de la veille*/}
+                  <div className='lg:absolute lg:top-80 lg:z-20 px-10 w-fit'>
+                    <h1 className='lg:text-6xl text-3xl font-bold lg:-mt-0 '>
+                      Les Robots Humanoïdes de Demain : <br/> 
+                    <span className="font-medium">À la Conquête de Notre Vie Quotidienne</span>
+                    </h1>
+                </div>
+
               </div>
 
-              <div className='text-center p-40 font-mono'>
+             {/*Description de la veille*/}
+              <div className='text-center lg:pt-0 pt-20 lg:p-40  font-mono '>
                 <Reveal>
                   <p>
                     Les avancées récentes dans la robotique, notamment avec les robots humanoïdes comme Figure et Optimus de Tesla, marquent un tournant majeur dans l'intégration de l'intelligence artificielle et de la robotique dans nos vies quotidiennes. Ces technologies promettent de transformer non seulement l'industrie, mais aussi nos maisons intelligentes de demain.
@@ -153,45 +167,15 @@ const Veille = () => {
        
               </div>
           
-              {/*présentation de optimus  */}
-              <div className='h-screen w-screen  text-white'>
-                  <div className='h-screen w-screen gap-10'>
-
-                  {/*texte */}
-                    <div className='flex flex-col text-center'>
-
-                          <h1 className='font-semibold text-9xl'>
-                            Optimus 
-                          </h1>
-                         <p className='font-mono'>par Tesla</p>
-                    </div>
-
-                    {/*img */}
-                    
-                    <div className='p-5'>
-          
-                        <img src={optimusbots} alt="optimus robots de Tesla" className=''/>
-               
-                    </div>
-                    
-                  </div>
+              {/*présentation de optimus */}
+              <div className='h-screen w-screen text-white pb-10'>
               </div>
-
-              {/*présentation de figure 02  */}
-              <div>
-
-               </div>
          
 
                 {/*plus d'articles */}
                 <div className='text-white z-40 '>
                   <div className='flex flex-col gap-10 '>
 
-                    <div className='px-5 text-center md:hidden block'>
-                      <h1 className='lg:hidden block text-6xl font-black z-20 py-10'>Ma Veille technologique</h1>
-                      <hr className='pt-5'/>
-                      <h1 className=' text-4xl font-bold'>Les Robots Humanoïde 🤖</h1>
-                    </div>
                     <div className='lg:ps-20 px-5'>
                         <h1 className=' lg:text-7xl text-4xl z-50 font-bold lg:w-5/6 lg:pt-0 pt-10'>Les robots humanoïde transforme <HighlighterAnimation texte={"notre avenir !"} color='#ad03fc' opacity={1}/></h1>
                         <span className='font-bold text-4xl font-pixelify '>🤖 🦾</span>

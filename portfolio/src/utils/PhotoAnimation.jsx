@@ -6,6 +6,7 @@ import face2 from "../assets/face/face2.jpeg";
 import face3 from "../assets/face/memoji.jpg";
 import face4 from "../assets/face/powerpuffoceane.png";
 import video from "../assets/video/videoface2.mp4";
+import BlockBg from './BlockBg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +92,9 @@ const PhotoAnimation = () => {
         </div>
       </div>
 
-      <div className="photo h-full w-full flex justify-center items-center z-10 bg-white"></div>
+      <div className="photo h-screen w-screen z-10 ">
+        <BlockBg/>
+      </div>
 
 
     </div>

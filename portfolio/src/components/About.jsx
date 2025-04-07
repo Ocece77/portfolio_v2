@@ -25,7 +25,10 @@ import sticker15 from "../assets/logo/reactLogo.png";
 import sticker16 from "../assets/logo/swiftLogo.png";
 import sticker17 from "../assets/logo/tailwindLogo.png";
 import sticker18 from "../assets/rainbowsticker.png";
-
+import face1 from "../assets/face/face1.jpg";
+import face2 from "../assets/face/face2.jpeg";
+import face3 from "../assets/face/memoji.jpg";
+import face4 from "../assets/face/powerpuffoceane.png";
 import Reveal from '../utils/Reveal';
 import ChangeNavColor from '../context/ChangeNavColor';
 
@@ -47,7 +50,7 @@ const About = ()=> {
     {
       nom : "BAC STI2D option EE",
       date : "2021",
-      description:"Lycée la mare carée",
+      description:"Lycée la Mare Carée",
       label: "scolaire"
     },
     {
@@ -82,7 +85,7 @@ const About = ()=> {
     },
     {
       nom : "Bénévole",
-      date : "2023 - maintenant",
+      date : "2023 - 2023",
       description:"pour RockCorps",
       label: "associatif"
     },
@@ -111,12 +114,12 @@ const About = ()=> {
           invalidateOnRefresh: true
         },
         ease: "none",
-        scale: scaleVal
+        scale:  i == 2 ? .98 : scaleVal
       });
 
       ScrollTrigger.create({
         trigger: stage,
-        start: `top+=${i * spacer} top`,
+        start: `top+=${i == 3 ? 0 : i * spacer} top`,
         end: `bottom top+=${500 + (stageSections.length * spacer)}`,
         endTrigger: '.cards',
         pin: true,
@@ -129,9 +132,9 @@ const About = ()=> {
   }, []);
 
   return (
-    <div>
-      {/* Page transition */}
-      <PixelTransition /> 
+    <>
+    {/*pc et tablette seulement */}
+    <div className='hidden md:flex'>
 
       {/* Sections animées */}
       <div ref={stageSectionRef} className='cards'>
@@ -155,10 +158,11 @@ const About = ()=> {
               <img src={sticker3} alt="question pc" className='draggable-sticker w-50 absolute bottom-10 right-10 rotate-12 '/>
         </div>
 
-       {/* Section photos */}
-        <div className='h-[550vh] w-screen stagesection'>
+       {/* Section photos pc et tablette seulement*/}
+        <div className='h-[600vh] w-screen stagesection md:block hidden'>
             <PhotoAnimation/>
         </div>
+
 
         {/* Section mes hards skils */}
         <div className='h-screen w-screen stagesection '>
@@ -222,8 +226,8 @@ const About = ()=> {
     
           <div className='relative flex justify-center items-center pt-10 px-5 text-white h-fit'>
             <Reveal delay={0.5}>
-              <h1 className="relative font-bold text-4xl lg:text-6xl lg:w-2/3 h-full lg:px-0  ">Et j'ai plein d'expériences 
-                <HighlighterAnimation texte="professionelle" color="#ad03fc" opacity={1} />
+              <h1 className="relative font-bold text-4xl lg:text-6xl lg:w-2/3 h-full lg:px-0  ">Et j'ai de nombreuses 
+                <HighlighterAnimation texte="d'expériences" color="#ad03fc" opacity={1} />
                 <img src={sticker18} alt="rainwbow sticker" className='draggable-sticker w-20 lg:w-50 lg:absolute -bottom-10 -right-40 rotate-12'/>
               </h1>
             </Reveal>
@@ -242,7 +246,9 @@ const About = ()=> {
                             return (
                               <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-amber-200 transition-all">
                                 <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-amber-100">{experience.date}</p>
                                 <p className="font-normal text-sm ">{experience.description}</p>
+                               
                               </div>
                             )
                           }
@@ -260,6 +266,7 @@ const About = ()=> {
                             return (
                               <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-sky-200 transition-all">
                                 <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-sky-100">{experience.date}</p>
                                 <p className="font-normal text-sm">{experience.description}</p>
                               </div>
                             )
@@ -277,6 +284,7 @@ const About = ()=> {
                             return (
                               <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-green-200 transition-all">
                                 <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-green-100">{experience.date}</p>
                                 <p className="font-normal text-sm">{experience.description}</p>
                               </div>
                             )
@@ -285,7 +293,7 @@ const About = ()=> {
                       }
                     </div>
 
-                    <div className='flex flex-col gap-5 '>        
+                    <div className='flex flex-col gap-3 '>        
                       {/*mes prix */}
                       <p>Mes prix et distinctions</p>
                       {
@@ -294,20 +302,21 @@ const About = ()=> {
                             return (
                               <div key={i} className="block max-w-sm p-6 w-80 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-pink-200 transition-all">
                                 <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-pink-100">{experience.date}</p>
                                 <p className="font-normal text-sm">{experience.description}</p>
                               </div>
                             )
                           }
                         })
                       }
-                       <p>Mes certifications</p>
-
+                       <p className='-mb-2'>Mes certifications</p>
                       {
                         experienceArray.map((experience , i)=>{
                           if (experience.label =="certification"){
                             return (
                               <div key={i} className="block max-w-sm  p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-red-200 transition-all">
                                 <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-red-100">{experience.date}</p>
                                 <p className="font-normal text-sm">{experience.description}</p>
                               </div>
                             )
@@ -322,6 +331,220 @@ const About = ()=> {
           </div>
 
         </div>
+
+
+    {/*mobile */}
+    <div className='flex flex-col md:hidden'> 
+
+      <div>
+
+      {/* Section d'introduction */}
+      <div className=' w-screen flex flex-col text-center justify-center items-center'>
+        <h1 className="font-bold text-6xl lg:w-1/2">
+            Mais c'est qui cette Océane <HighlighterAnimation texte="KASINDU" color='#ffd900'/>?
+        </h1>
+        <img src={sticker1} alt="question sticker" className='draggable-sticker w-50   rotate-12'/>
+      </div>
+
+     {/* Section description sur moi */}
+      <div className='h-screen w-screen flex flex-col justify-center items-center bg-white pt-20'>
+             <BlockBg/>
+             <img src={sticker2} alt="question bts sio" className='draggable-sticker w-50  lg:left-10 -rotate-12'/>
+              <h1 className="font-bold text-5xl text-center lg:w-5/6">
+                  Je suis une étudiante en <HighlighterAnimation texte="BTS SIO" color='#00d5ff'/> intéressée par la robotique et <HighlighterAnimation texte="kiffant" color='#7b00ff'/> la <HighlighterAnimation texte="programmation" color='#ffd000'/>  et le  <HighlighterAnimation texte="roller aggressif" color='#0ffa55'/> 
+              </h1>
+              <img src={sticker3} alt="question pc" className='draggable-sticker w-50 rotate-12 '/>
+        </div>
+
+        {/* Section photos mobile seulement */}
+        <div className='h-screen w-screen md:hidden block py-20 '>
+          <p className='font-mono text-center'>quelques photos de moi :)</p>
+
+            <div className="photo h-full w-full grid grid-cols-2 justify-center items-center z-10">
+              <div className='p-3'>
+              <img src={face3} alt="face" className='rounded-xl' />
+              </div>
+              <div className='p-3'>
+              <img src={face1} alt="face" className='rounded-xl' />
+              </div>
+              <div className='p-3'>
+                <img src={face2} alt="face" className='rounded-xl' />
+              </div>
+              <div className='p-3'>
+                <img src={face4} alt="face" className='rounded-xl' />
+              </div>
+          </div>
+        </div>
+
+        {/* Section mes hards skils */}
+        <div className='h-screen w-screen py-5'>
+          <BlockBg/>
+          <div className='relative h-screen w-screen flex flex-col gap-5 justify-center items-center rounded text-center'>
+         {/* Stickers aligner sur deux lignes */}
+         <h1 className="font-bold text-5xl lg:text-6xl lg:w-1/2">Je suis à <span className='underline'>l'aise</span> avec ces <HighlighterAnimation texte="technologies" color="#ff0066"/></h1>
+         <p className='font-mono text-sm'>[Parce que je les ai apprises  <HighlighterAnimation texte="en dehors" color="#ffb300"/> et <HighlighterAnimation texte="au cours" color="#80ff00"/> en dehors de ma formation hihi !!]</p>
+         <div className=' flex flex-wrap '>
+         {
+            stickersArray1.map((sticker, i)=>{
+              return (
+                <img key={i} src={sticker} alt="sticker Logo"
+                 
+                className={`w-20`}/>
+              )
+            })
+          }
+
+          {
+            stickersArray2.map((sticker, i)=>{
+              return (
+                <img key={i} src={sticker} alt="sticker Logo"
+                  
+                className={`w-20 `}/>
+              )
+            })
+          }
+
+          {
+            stickersArray4.map((sticker, i)=>{
+              return (
+                <img key={i} src={sticker} alt="sticker Logo"
+                  
+                className={`w-20 `}/>
+              )
+            })
+          }
+
+          {
+            stickersArray3.map((sticker, i)=>{
+              return (
+                <img key={i} src={sticker} alt="sticker Logo"
+                 
+                className={`w-20 `}/>
+              )
+            })
+          }
+
+         </div>
+
+          </div>
+        </div>
+
+
+      </div>
+  
+      {/* Section mes expériences*/}
+      <div className='lg:h-screen h-fit w-screen stagesection border-4 bg-zinc-950 border-white'>
+         {/* titre de la section => mes expériences*/}
+    
+          <div className='relative flex justify-center items-center pt-10 px-5 text-white h-fit'>
+            <Reveal delay={0.5}>
+              <h1 className="relative font-bold text-4xl lg:text-6xl lg:w-2/3 h-full lg:px-0  ">Et j'ai de nombreuses 
+                <HighlighterAnimation texte="d'expériences" color="#ad03fc" opacity={1} />
+                <img src={sticker18} alt="rainwbow sticker" className='draggable-sticker w-20 lg:w-50 lg:absolute -bottom-10 -right-40 rotate-12'/>
+              </h1>
+            </Reveal>
+          </div>
+
+          <ChangeNavColor>
+            <div className='w-screen h-full px-10 gap-5 items-center flex lg:flex-row flex-col  text-white font-mono justify-center'>
+                      {/*expérience */}
+
+                    <div className='flex flex-col gap-5 '>
+                      {/*ma scolarité */}
+                      <p>Expérience professionelle</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="experience"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-amber-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-amber-100">{experience.date}</p>
+                                <p className="font-normal text-sm ">{experience.description}</p>
+                               
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                    <div className='flex flex-col gap-5'>        
+                    {/*ma scolarité */}
+                    <p>Mon parcours scolaire</p>
+
+                    {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="scolaire"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-sky-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-sky-100">{experience.date}</p>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                    <div className='flex flex-col gap-5 '>        
+                      {/* mes expérience associatifs */}
+                      <p>Mes expériences associatifs</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="associatif"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-green-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-green-100">{experience.date}</p>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                    <div className='flex flex-col gap-3 '>        
+                      {/*mes prix */}
+                      <p>Mes prix et distinctions</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="prix"){
+                            return (
+                              <div key={i} className="block max-w-sm p-6 w-80 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-pink-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-pink-100">{experience.date}</p>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                       <p className='-mb-2'>Mes certifications</p>
+                      {
+                        experienceArray.map((experience , i)=>{
+                          if (experience.label =="certification"){
+                            return (
+                              <div key={i} className="block max-w-sm  p-6 text-gray-900 bg-gray-100 border border-gray-200 rounded-lg shadow-sm hover:bg-red-200 transition-all">
+                                <h1 className="mb-2 text-xl font-bold tracking-tight">{experience.nom}</h1>
+                                <p className=" font-bold text-sm bg-red-100">{experience.date}</p>
+                                <p className="font-normal text-sm">{experience.description}</p>
+                              </div>
+                            )
+                          }
+                        })
+                      }
+                    </div>
+
+                 
+              </div>
+          </ChangeNavColor>
+          </div>
+
+        </div>
+    </>
+
 
  
 
