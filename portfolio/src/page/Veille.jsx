@@ -10,11 +10,6 @@ import Reveal from '../utils/Reveal'
 import { NavContext } from '../context/NavProvider';
 import ChangeNavColor from '../context/ChangeNavColor';
 import videoOptimus from "../assets/video/figure_02_video.mp4";
-import atlas from "../assets/robots/atlas.jpg";
-import figure from "../assets/robots/figure02.jpg";
-import gr2 from "../assets/robots/gr2.jpg";
-import neo from "../assets/robots/onex.jpeg";
-import optimus from "../assets/robots/optimus.jpeg";
 import ImageTrack from '../utils/ImageTrack';
 
 const Veille = () => {
@@ -89,7 +84,7 @@ const Veille = () => {
     })
 
     tl.to(".titre" , {
-      scale: 90,
+      scale: 100,
       xPercent : -120,
       transformOrigin: "50% 50%"
     })
@@ -111,12 +106,14 @@ const Veille = () => {
 
       {/*page transition*/}
       <PixelTransition /> 
-      <div>
+
+      {/*background*/}
+         <div>
            <BlockBg/>
          </div>
         
       {/*pc(ordinateur) seulement*/}
-      <div className='h-screen w-screen relative md:block hidden  overflow-y-visible'>
+      <div className='h-screen w-screen relative md:block hidden  overflow-y-visible overflow-x-hidden'>
         <div className='h-[200vh]'>
          <GravityBox texte={"Ma Veille technologique"}/>
         </div>
@@ -130,16 +127,16 @@ const Veille = () => {
 
        {/*troisième page - contenue de la veille*/}
        <ChangeNavColor>
-        <div className='relative h-fit w-screen pb-80 flex flex-col justify-center overflow-x-hidden bg-black  text-white'>
-
+        <div className='h-fit w-screen pb-80 flex flex-col justify-center overflow-x-hidden bg-black text-white -mt-100'>
+         
            {/*vidéo d'intro */}
-             <div className='flex flex-col relative h-screen w-screen z-40 '>
+             <section className='flex flex-col relative h-screen w-screen'>
 
+                {/*titre de la page - mobile seulement */}
                 <div className='px-5 text-center md:hidden block pt-10'>
                       <h1 className='lg:hidden block text-6xl font-black z-20 py-10'>Ma Veille technologique</h1>
                   </div>
                     
-
                 {/*vidéo */}
                 <video autoPlay loop muted preload="auto" className='lg:absolute h-screen inset-x-0 top-0 pointer-events-none' playsInline={true} >
                     <source src={videoOptimus} type="video/mp4"/>
@@ -153,75 +150,67 @@ const Veille = () => {
                     </h1>
                 </div>
 
-              </div>
+              </section>
 
              {/*Description de la veille*/}
-              <div className='h-fit  text-center lg:pt-0 py-20 lg:p-40 font-mono bg-black z-40  -mt-10'>
+              <section className='h-fit  items-center justify-center text-center font-mono px-40 py-20'>
                 <Reveal>
                   <p>
                     Les avancées récentes dans la robotique, notamment avec les robots humanoïdes comme Figure et Optimus de Tesla, marquent un tournant majeur dans l'intégration de l'intelligence artificielle et de la robotique dans nos vies quotidiennes. Ces technologies promettent de transformer non seulement l'industrie, mais aussi nos maisons intelligentes de demain.
                   </p>
                 </Reveal>
-              </div>
+              </section>
           
-              {/*présentation de optimus */}
+              {/*Image de robots */}
                 <ImageTrack/>
-         
 
-                {/*plus d'articles */}
-                <div className='h-fit text-white z-40 bg-black py-20'>
-                  <div className='flex flex-col gap-10 '>
-
-                    <div className='lg:ps-20 px-5'>
-                        <h1 className=' lg:text-7xl text-4xl z-50 font-bold lg:w-5/6 lg:pt-0 pt-10'>Les robots humanoïde transforme <HighlighterAnimation texte={"notre avenir !"} color='#ad03fc' opacity={1}/></h1>
-                        <span className='font-bold text-4xl font-pixelify '>🤖 🦾</span>
-                    </div>
-                  
-                    <Reveal>
-                      <div className=' lg:ps-20 px-5'>
-                        <span className='text-xl font-mono'>Les maisons intelligentes évoluent à toute vitesse, rendant nos foyers plus confortables, plus sûrs et plus  <span className='text-black'><HighlighterAnimation texte={"éco-friendly"} color='#8ffc00' opacity={1}/></span> grâce aux nouvelles technologies !</span>
-                      </div>
-                    </Reveal>
-
-                  {/*section IOT*/}
-
-                      <section className='relative h-fit w-screen'>
-
-                          <div className='bg-black -z-10 h-screen w-screen absolute'> {/*background */}</div>
-                            <div className='grid md:grid-cols-3 grid-cols-1 h-fit w-screen pt-16 px-5'>        
-                                    {/*listes d'articles */}
-                                    {
-                                      robotNews.map((news, i) => {
-                                        return( 
-                                        <div
-                                          key={i}
-                                          className={`block ${i > 2 && window.innerWidth > 768 ? "-mt-30":"mt-4"} p-6 h-fit  text-gray-900 bg-white border rounded-lg shadow-sm hover:bg-${ colorsTailwind[i % colorsTailwind.length]} transition-all hover:-translate-y-10`}
-                                        >
-                                          <h1 className={`mb-2 text-2xl font-bold tracking-tight text-${ colorsTailwind[i % colorsTailwind.length]} `}>{news.nom}</h1>
-                                          <p className="font-normal font-mono pb-10">{news.description}</p>
-                                          <hr className='pt-4'/>
-                                          <a
-                                            href={news.lien}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={`font-black  hover:text-indigo-600`}
-                                          >
-                                            Lire plus
-                                          </a>
-                                        </div>
-                                        )
-                                      })
-                                    }
-                              </div> 
-                      </section>
-
-
-                    {/*section IOT */}
-                    {/*Écologie et innovation*/}
-                    {/*Sécurité et vie privée : des enjeux majeurs */}
-
+              {/*News récents*/}
+                <section className='h-screen w-screen bg-black px-20 py-20'>
+                  <div>
+                    <h1 className='font-pixelify text-7xl'>
+                     Les dernières actus
+                    </h1>
                   </div>
-                </div>
+                  <div className='grid grid-cols-2'>
+              
+                    {/*one video __ côté gauche*/}
+                    <div className='h-screen' >
+                      <video autoPlay loop muted preload="auto" className='h-screen pointer-events-none rounded-xl object-cover p-20' playsInline={true} >
+                          <source src={videoOptimus} type="video/mp4"/>
+                      </video>
+                    </div>
+
+                    {/*2 video __ côté droit*/}
+                    <div className='grid grid-cols-1' >
+                    <video autoPlay loop muted preload="auto" className=' pointer-events-none rounded-xl object-cover p-20' playsInline={true} >
+                          <source src={videoOptimus} type="video/mp4"/>
+                      </video>
+
+
+                      <div className='relative'>
+                      <video autoPlay loop muted preload="auto" className=' pointer-events-none rounded-xl object-cover p-20' playsInline={true} >
+                              <source src={videoOptimus} type="video/mp4"/>
+                          </video>
+                          <div className='absolute bottom-5 left-3.5'>
+                            <p className='font-pixelify text-sm'>Marche naturelle d'un humanoïde grâce à l'apprentissage par renforcement</p>
+                            <p className='text-sm'>March 25, 2025 </p>
+                          </div>
+
+                      </div>
+                   
+                    </div>
+                  </div>
+                </section>
+
+
+              {/*Toutes les News  */}
+                <section>
+
+                </section>
+    
+
+            
+
 
           </div>   
       </ChangeNavColor>

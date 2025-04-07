@@ -92,7 +92,7 @@ const Projects = () => {
         <div className='panel lg:block hidden'>
         <GravityBox texte={"Hey, regarde un peu ce que j'ai fait !"} groundRemover={window.innerHeight + 50}/>
           {/* Conteneur principal pour les objets 3D */}
-            <div className='flex justify-center items-center w-screen h-screen z-10 '> 
+            <div className='w-screen h-screen'> 
             </div>
           </div>
 
@@ -134,7 +134,7 @@ const Projects = () => {
 
 
  {/*Panel de projet mobile*/}
-    <div>
+    <div className='md:hidden flex  h-screen w-screen'>
          {/* première page - mobile only*/}
          <div className='relative  lg:hidden flex justify-center items-center w-screen'>
             <h1 className='text-4xl font-bold p-10 z-20 text-center'>Hey, regarde un peu ce <HighlighterAnimation texte={"que j'ai fait !"} color='##34e5eb'/> </h1>
