@@ -1,7 +1,9 @@
 
 # 🌟 Portfolio d’Océane Kasindu v2
 
-Voir mon portfolio : [https://ocece77.github.io/portfolio_v2/](https://ocece77.github.io/portfolio_v2/)
+🌈 Voir mon portfolio : [https://ocece77.github.io/portfolio_v2/](https://ocece77.github.io/portfolio_v2/) 🌈
+
+
 Bienvenue sur mon portfolio interactif, créatif et vivant !  
 Je m'appelle **Océane Kasindu** et je suis actuellement étudiante en deuxième année **BTS SIO (Services Informatiques aux Organisations)**, passionnée par la **programmation**, la **robotique**, le **design**, et même le **roller agressif** 🛼💻🤖
 
@@ -21,9 +23,8 @@ Ce portfolio est bien plus qu’un simple CV : c’est un espace où je présent
 
 ## 🛠️ Tech Stack
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,tailwind)](https://skillicons.dev)
+
 
 Ce site a été conçu en **React.js** et**tailwind css** avec :
 
@@ -81,7 +82,14 @@ Un espace dédié pour **présenter ma formation** :
 
 ## 💬 Contact
 
-Pour en savoir plus ou échanger, n’hésitez pas à me contacter via les liens disponibles en bas du portfolio !
+Pour en savoir plus ou échanger, n’hésitez pas à me contacter via les liens disponibles en bas du portfolio  ou ici !
+
+ [![My Skills](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/oceanekasindu/) 
+[My Linkedin](https://www.linkedin.com/in/oceanekasindu/) 
+
+
+[![Contact me :](https://skillicons.dev/icons?i=gmail)](mailto:oceanekasindupro@gmail.com?subject=[GitHub]%20Want%20to%20Contact%20You)
+[Contact me for more info](mailto:oceanekasindupro@gmail.com?subject=[GitHub]%20Want%20to%20Contact%20You) 
 
 ---
 
