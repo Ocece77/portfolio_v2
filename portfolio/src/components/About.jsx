@@ -120,7 +120,7 @@ const About = ()=> {
       ScrollTrigger.create({
         trigger: stage,
         start: `top+=${i == 3 ? 0 : i * spacer} top`,
-        end: `bottom top+=${500 + (stageSections.length * spacer)}`,
+        end: `bottom top+=${1000 + (stageSections.length * spacer)}`,
         endTrigger: '.cards',
         pin: true,
         pinSpacing: false,
@@ -218,10 +218,8 @@ const About = ()=> {
         </div>
 
 
-      </div>
-  
       {/* Section mes expériences*/}
-      <div className='lg:h-screen h-fit w-screen stagesection border-4 bg-zinc-950 border-white'>
+      <div className='h-screen  w-screen  border-4 bg-zinc-950 border-white stagesection'>
          {/* titre de la section => mes expériences*/}
     
           <div className='relative flex justify-center items-center pt-10 px-5 text-white h-fit'>
@@ -330,6 +328,9 @@ const About = ()=> {
           </ChangeNavColor>
           </div>
 
+      </div>
+  
+
         </div>
 
 
@@ -433,7 +434,7 @@ const About = ()=> {
       </div>
   
       {/* Section mes expériences*/}
-      <div className='lg:h-screen h-fit w-screen stagesection border-4 bg-zinc-950 border-white'>
+      <div className='md:h-screen h-fit w-screen stagesection border-4 bg-zinc-950 border-white'>
          {/* titre de la section => mes expériences*/}
     
           <div className='relative flex justify-center items-center pt-10 px-5 text-white h-fit'>
