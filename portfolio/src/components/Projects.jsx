@@ -3,13 +3,15 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Stickers from '../utils/Stickers';
-import parapplegamespreviewer from "../assets/projetimage/parapplegameprewiew.jpeg";
+import parapplegamespreviewer from "../assets/projetimage/parapplegamepreview.jpeg";
 import todolistapppreview from "../assets/projetimage/todolistapppreview.jpeg";
 import flynangapreview from "../assets/projetimage/flynangapreview.jpeg";
+import finailypreview from "../assets/projetimage/finailyaipreview.jpeg";
+import messagewebapppreview from "../assets/projetimage/messagewebapppreview.jpeg";
+import webprojectpreview from "../assets/projetimage/webprojectpreview.jpeg";
+import frontendmentorpreview from "../assets/projetimage/frontendmentorpreview.jpeg"
 import pokedexpreview from "../assets/projetimage/pokedexpreview.jpeg";
 import GravityBox from '../utils/GravityBox'
-import sticker1 from "../assets/smileysticker.png";
-import sticker4 from "../assets/cookiesticker.png";
 import HighlighterAnimation from '../utils/HighlighterAnimation';
 
 const projectsList =  [
@@ -19,6 +21,7 @@ const projectsList =  [
     description : "Application IOS qui fait découvrir les parasport par des jeux utilisant la computer vision",
     image : parapplegamespreviewer,
     lien : "https://github.com/Ocece77/Parapplegames",
+    tech : ["SwiftUi" , "Vision Framework", "Machine Learning"], 
     colorBg : "bg-pink-50",
     colorText : "text-pink-500"
 
@@ -30,8 +33,9 @@ const projectsList =  [
     description : "Application web répertoriant les 100 premiers pokémons",
     image :  pokedexpreview,
     lien : "https://ocece77.github.io/Pokedex-online/",
+    tech : ["javascript" , "html", "css" , "api"], 
     colorBg : "bg-sky-100",
-        colorText : "text-sky-700"
+    colorText : "text-sky-700"
   },
   
 
@@ -41,7 +45,7 @@ const projectsList =  [
     description : "Application web pour lister ces choses à faire !",
     image :  todolistapppreview,
     lien : "https://todo-list-app-1-0wsu.onrender.com",
-    color : "orange",
+    tech : ["Mongo DB" , "Express js", "React js" , "Node js"], 
     colorBg : "bg-amber-50",
     colorText : "text-amber-500"
   },
@@ -53,10 +57,54 @@ const projectsList =  [
     description : "Site vitrine de flynanga",
     image :  flynangapreview,
     lien : "#projects",
+    tech : [ "React js" , "Tailwind css"], 
     colorBg : "bg-red-50",
     colorText : "text-red-500"
   },
 
+  {
+    nom : "Finaily AI",
+    note : "Projet perso",
+    description : "Une super IA optimisant la recherche d'emploi à l'aide du cv ",
+    image :  finailypreview,
+    lien : "#projects",
+    tech : [ "Gemini API" , "Python" , "React js"], 
+    colorBg : "bg-amber-50",
+    colorText : "text-amber-500"
+  },
+
+  {
+    nom : "Messagerie web APP",
+    note : "Projet perso",
+    description : "Envoie n'importe quel message grâce à ce mini tchat en ligne web ",
+    image :  messagewebapppreview,
+    lien : "https://github.com/Ocece77/message_live_app",
+    tech : ["Mongo DB" , "Express js", "React js" , "Node js"], 
+    colorBg : "bg-sky-50",
+    colorText : "text-sky-500"
+  },
+
+  {
+    nom : "Mini projets web",
+    note : "Projet perso",
+    description : "Voici un repo de tout mes minis projets web que j'ai réalisés",
+    image :  webprojectpreview,
+    lien : "https://github.com/Ocece77/Web-Project",
+    tech : [ "html" , "css" , "Typescript" , "JavaScript" ], 
+    colorBg : "bg-purple-50",
+    colorText : "text-purple-500"
+  },
+
+  {
+    nom : "FrontEnd Mentor",
+    note : "Projet perso",
+    description : "Tous les projets front end mentor que j'ai réalisée",
+    image :  frontendmentorpreview,
+    lien : "https://github.com/Ocece77/Web-Project",
+    tech : [ "html" , "css" , "Typescript" , "JavaScript" ], 
+    colorBg : "bg-red-50",
+    colorText : "text-red-500"
+  },
 ]
 
 const Projects = () => {
@@ -70,7 +118,7 @@ const Projects = () => {
     let sections = gsap.utils.toArray(".panel");
 
       gsap.to(sections, { 
-        xPercent: -100 * (sections.length - 2),
+        xPercent: -100 * (sections.length - 1),
         ease: "none",
           scrollTrigger: {
             trigger: projectContainerRef.current,
@@ -118,6 +166,17 @@ const Projects = () => {
                         {/*Titre & description  */}
                         <div className='flex lg:flex-row flex-col w-full items-end justify-between lg:gap-0 gap-5'>
                           <p className='font-mono text-sm lg:w-1/3 w-full'>{project.description}</p>
+                            <div className='flex gap-4 '>
+                          {
+                            project.tech.map((techName , i)=>{
+                              return(
+                                <div key={i} className="px-2 py-2 border  border-black text-sm  uppercase">
+                                  <p>{techName}</p>
+                                  </div>
+                              )
+                            })
+                          }
+                          </div>
                           <p className={`font-mono text-sm lg:w-1/5 w-fit rounded p-2 ${project.colorBg}`}>{project.note}</p>
                         </div>
 
@@ -134,7 +193,7 @@ const Projects = () => {
 
 
  {/*Panel de projet mobile*/}
-    <div className='md:hidden flex  h-screen w-screen'>
+    <div className='md:hidden flex flex-col  h-fit w-screen'>
          {/* première page - mobile only*/}
          <div className='relative  lg:hidden flex justify-center items-center w-screen'>
             <h1 className='text-4xl font-bold p-10 z-20 text-center'>Hey, regarde un peu ce <HighlighterAnimation texte={"que j'ai fait !"} color='##34e5eb'/> </h1>
@@ -161,6 +220,18 @@ const Projects = () => {
                       {/*Titre & description  */}
                       <div className='flex lg:flex-row flex-col w-full items-end justify-between lg:gap-0 gap-5'>
                         <p className='font-mono text-sm lg:w-1/3 w-full'>{project.description}</p>
+                        <div className='flex gap-4 '>
+                        {
+                          project.tech.map((techName , i)=>{
+                            return(
+                              <div key={i} className="px-2 py-2 border  border-black text-sm  transition-all">
+                                <p>{techName}</p>
+                                </div>
+                            )
+                          })
+                        }
+                        </div>
+                   
                         <p className={`font-mono text-sm lg:w-1/5 w-fit rounded p-2 ${project.colorBg}`}>{project.note}</p>
                       </div>
 

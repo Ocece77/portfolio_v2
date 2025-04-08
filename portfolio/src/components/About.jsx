@@ -334,7 +334,7 @@ const About = ()=> {
 
 
     {/*mobile */}
-    <div className='flex flex-col md:hidden'> 
+    <div className='flex flex-col md:hidden bg-white'> 
 
       <div>
 

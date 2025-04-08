@@ -28,7 +28,7 @@ const Footer = () =>{
             </Reveal>
 
           {/*Liens vers les réseaux socials */}
-            <div className='w-full flex lg:flex-row flex-col lg:justify-end lg:px-50 font-mono text-sm lg:gap-10 gap-4 '>
+            <div className='w-full flex md:flex-row flex-col md:justify-end md:px-50 font-mono text-sm lg:gap-10 gap-4 '>
               <Reveal delay={1.2}>
                   <a className='flex gap-2 items-center hover:text-amber-900 transition-all text-sm' href="https://www.linkedin.com/in/oceanekasindu" target="_blank" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faLinkedin} size="2x" />
