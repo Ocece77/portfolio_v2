@@ -63,33 +63,25 @@ const PhotoAnimation = () => {
     <div ref={photoContainer} className='photo-container h-screen w-screen flex justify-center items-center '>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-90 '>
-          <img src={face3} alt="face" className='rounded-xl' />
-        </div>
+          <img src={face3} alt="face" className='rounded-xl xl:w-[25vw] w-[35vw]' />
       </div>
 
       <div className="photo h-full w-full bg-amber-100"></div>
 
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-90 '>
-           <img src={face4} alt="face" className='rounded-xl' />
-        </div>
+           <img src={face4} alt="face" className='rounded-xl xl:w-[25vw] w-[35vw]' />
       </div>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/2 lg:h-1/3 lg:w-2/5 w-100'>
-          <video autoPlay loop muted preload="auto" className='rounded-xl  pointer-events-none' playsInline={true}>
+          <video autoPlay loop muted preload="auto" className='rounded-xl xl:w-[30vw] w-[40vw] pointer-events-none' playsInline={true}>
             <source src={video} type="video/mp4"/>
               <img src={face3} alt='memoji photo'/>
         </video>
-        </div>
       </div>
 
       <div className="photo h-full w-full flex justify-center items-center z-10">
-        <div className='h-1/2 lg:h-1/3 lg:w-1/3 w-90 '>
-          <img src={face2} alt="face" className='rounded-xl' />
-        </div>
+          <img src={face2} alt="face" className='rounded-xl xl:w-[25vw] w-[35vw]' />
       </div>
 
       <div className="photo h-screen w-screen z-10 ">

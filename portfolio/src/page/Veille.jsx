@@ -185,12 +185,12 @@ const Veille = () => {
              <section className='flex flex-col relative h-screen w-screen'>
                     
                 {/*vidéo */}
-                <video autoPlay loop muted preload="auto" className='lg:absolute h-screen inset-x-0 top-0 pointer-events-none' playsInline={true} >
+                <video autoPlay loop muted preload="auto" className='w-screen lg:absolute h-screen inset-x-0 top-0 pointer-events-none' playsInline={true} >
                     <source src={videoOptimus} type="video/mp4"/>
                 </video>
 
                  {/*Titre du thème de la veille*/}
-                  <div className='lg:absolute lg:top-80 lg:z-20 px-10 md:w-screen flex justify-center'>
+                  <div className='lg:absolute  lg:bottom-80 lg:z-20 px-10 md:w-screen flex justify-center'>
                     <h1 className='lg:text-6xl text-3xl font-bold lg:-mt-0 '>
                       Les Robots Humanoïdes de Demain : <br/> 
                     <span className="font-medium">À la Conquête de Notre Vie Quotidienne</span>
@@ -258,7 +258,7 @@ const Veille = () => {
                         en savoir plus
                         </a>
 
-                      <video autoPlay loop muted preload="auto" className='h-full pointer-events-none object-cover p-5' playsInline={true} >
+                      <video autoPlay loop muted preload="auto" className=' pointer-events-none object-cover p-5' playsInline={true} >
                               <source src={neogamma} type="video/mp4"/>
                           </video>
 
@@ -283,7 +283,7 @@ const Veille = () => {
                         en savoir plus
                         </a>
 
-                      <video autoPlay loop muted preload="auto" className='h-full pointer-events-none object-cover p-5' playsInline={true} >
+                      <video autoPlay loop muted preload="auto" className='pointer-events-none object-cover p-5' playsInline={true} >
                               <source src={atlas} type="video/mp4"/>
                           </video>
 
@@ -335,7 +335,6 @@ const Veille = () => {
                                               <p className=' text-sm font-bold'>{news.nom}</p>
                                               <p className='text-sm'>{news.date}</p>
                                               <p>par {news.auteur}</p>
-
                                             </div>
                                       
                                        </div>
