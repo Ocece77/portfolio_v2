@@ -34,12 +34,6 @@ const Hero = ({ windowLoaded }) => {
       }
   });
 
-      gsap.utils.toArray(".gsapelement").forEach((layer) => {
-        const depth = layer.dataset.depth;
-        const movement =  -(layer.offsetHeight * depth) * -5;
-        tl.to(layer, { y: -movement, ease: "none" }, 0);
-      });
-
      gsap.fromTo(asset2Ref.current ,
         {translateY:window.innerHeight } ,
         {translateY:"0px", duration: 1 , delay : .7})
@@ -71,9 +65,10 @@ const Hero = ({ windowLoaded }) => {
 
             {/* Nom & prénom  */}
             <div className='flex flex-col justify-end h-screen p-10 md:pb-15 pb-20  w-screen lg:max-w-5xl gap-5 '>
-                <h1 data-depth="0.2" className='gsapelement text-5xl md:text-[10em] lg:text-[12em] leading-[0.75em] font-bold uppercase'>Océane KASINDU</h1>
-                <p data-depth="0.2" className='gsapelement text-sm lg:text-[1.5em] font-mono'>Développeuse Full-Stack - Etudiante en [BTS SIO]</p>
+                <h1 className='text-5xl md:text-[10em] lg:text-[12em] leading-[0.75em] font-bold uppercase'>Océane KASINDU</h1>
+                <p className='text-sm lg:text-[1.5em] font-mono'>Développeuse Full-Stack - Etudiante en [BTS SIO]</p>
           </div>
+
 
         </div>
 
