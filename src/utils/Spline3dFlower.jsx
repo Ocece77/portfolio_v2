@@ -37,7 +37,7 @@ const Spline3dFlower = ({ windowLoaded, finishLoading }) => {
 
      {/*mobile/tablet */}
      <div className="overflow-scroll relative h-screen w-screen lg:hidden ">
-      <div className="absolute pointer-events-none block bottom-10">{/*permet d'éviter l'action de la fleur sur tablet/mobile */}</div>
+      <div className="absolute overflow-scroll block bottom-10 h-screen w-screen ">{/*permet d'éviter l'action de la fleur sur tablet/mobile */}</div>
          <Suspense fallback={<div>Loading...</div>} className='hidden'>
             <Spline 
                 scene="https://prod.spline.design/o8kNDElOlXZro5Js/scene.splinecode" 

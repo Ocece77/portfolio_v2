@@ -64,7 +64,7 @@ const Hero = ({ windowLoaded }) => {
         {/* Conteneur principal pour les objets 3D */}
         <div className='relative w-screen h-screen lg:z-96 -bottom-5'> 
           {/* Objet 3D Spline */}
-          <div ref={threeDref} data-depth="0.9" className='gsapelement absolute z-90 h-screen w-screen '>
+          <div ref={threeDref} className=' absolute lg:z-90 h-screen w-screen '>
             <Spline3dFlower windowLoaded={windowLoaded} finishLoading={finishLoading} />
           </div>
 

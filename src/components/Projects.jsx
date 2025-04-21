@@ -194,19 +194,15 @@ const Projects = () => {
          <div id="projects" className='grid grid-cols-1 md:hidden h-fit w-screen bg-neutral-950 text-white z-99'>
           <div className='grid grid-cols-1 w-fit h-fit gap-10'>
 
-                {/*Panel de projet pc/tablet*/}
-                <h1 className='absolute left-10 top-50 z-1 animate-pulse font-mono text-[] md:text-[12px]'>[clique <br/> n'importe où.]</h1>
-
-                <Stickers/>
                 {      
                   projectsList.map((project, i) =>{
                     return(
                     <div key={i} className='h-screen w-screen flex flex-col items-center justify-center px-10'>
                       <div className='grid grid-cols-1 w-full h-150 justify-center'>
                             {/*Title */}
-                            <div className='z-1000'>
+                            <div>
                               <h1 className='text-3xl font-bold'>{project.nom}</h1>
-                              <a  className="text-[8px] font-mono -mt-1.5 hover:opacity-40 hover:underline transition-all w-fit z-1000" href={project.lien} target="_blank">[ Clique ici pour voir le projet ]</a>
+                              <a  className="text-[8px] font-mono -mt-1.5 hover:opacity-40 hover:underline transition-all w-fit " href={project.lien} target="_blank">[ Clique ici pour voir le projet ]</a>
                             </div>
 
                             {/*Image */}
