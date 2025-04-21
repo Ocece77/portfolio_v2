@@ -135,8 +135,8 @@ const Projects = () => {
     
     <>
       {/*première page - pc only */}
-      <div className='h-screen w-screen relative md:block hidden '>
-        <div className='h-[300vh] z-1000'>
+      <div className='h-screen w-screen relative md:block hidden z-999'>
+        <div className='h-[300vh] z-999'>
             <GravityBox texte={"Hey, regarde un peu ce que j'ai fait !"} groundRemover={window.innerHeight + 50}/>
           </div>
         </div>
@@ -146,7 +146,7 @@ const Projects = () => {
           <div ref={projectContainerRef} className='flex w-fit h-fit gap-20'>
 
                 {/*Panel de projet pc/tablet*/}
-                <h1 className='absolute left-10 top-50 z-1 animate-pulse font-mono text-[8px] md:text-[12px]'>[clique <br/> n'importe où.]</h1>
+                <h1 className='absolute left-10 top-50 z-1 animate-pulse font-mono text-[] md:text-[12px]'>[clique <br/> n'importe où.]</h1>
 
                 <Stickers/>
                 {      
