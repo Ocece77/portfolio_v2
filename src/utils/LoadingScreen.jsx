@@ -10,12 +10,6 @@ const LoadingScreen = ({ isLoading, percentage }) => {
   useGSAP(() => {
     const items = document.querySelectorAll(".percentage");
     if (isLoading) {
-      gsap.to(".loading-screen", {
-        y: 0, 
-        duration: 5,
-        ease: "power4.out", 
-      });
-
       gsap.from(items, {
         textContent: 0,
         duration: 2  ,
@@ -23,29 +17,16 @@ const LoadingScreen = ({ isLoading, percentage }) => {
         snap: { textContent: 1 },
         stagger: 1,
       });
-    } else {
-      gsap.to(".loading-screen", {
-        y: "-100%", 
-        duration: 5,
-        ease: "power4.in", 
-      });
-    }
+    } 
   }, [isLoading]); 
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      if (!isLoading){
-        loadingScreenRef.current.classList.add("hidden")
-      }
-    }, 2000)
-  },[isLoading])
 
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
           ref={loadingScreenRef}
-          className="fixed inset-0 bg-amber-200 text-white flex items-center justify-center z-1000"
+          className="loading-screen fixed inset-0 bg-amber-200 text-white flex items-center justify-center z-1000"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 1, ease: "easeInOut" }}
