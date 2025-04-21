@@ -32,11 +32,11 @@ const LoadingScreen = ({ isLoading, percentage }) => {
           exit={{ y: "-100%" }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <div className="absolute flex flex-col bottom-8 left-8 text-9xl font-bold">
+          <div className="absolute flex flex-col bottom-8 left-8 text-6xl md:text-9xl font-bold">
             <span className="text-sm">Patiente un peu please 🥺</span>
             <div className="grid grid-cols-2">
-            <p className=" w-80"><span className="percentage">100</span>%</p>               
-            <img src={sticker1} alt="face" className='animate-bounce rounded-xl object-contain w-45 rotate-12 ' />
+            <p className="w-80"><span className="percentage">100</span>%</p>               
+            <img src={sticker1} alt="face" className='animate-bounce rounded-xl object-contain w-20 md:w-45 rotate-12 ' />
             </div>
           </div>
         </motion.div>

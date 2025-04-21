@@ -142,7 +142,8 @@ const Projects = () => {
         </div>
 
   
-        <div id="projects" ref={mainRef} className=' h-screen w-screen bg-neutral-950 text-white z-99'>
+        {/*tablette/pc */}
+        <div id="projects" ref={mainRef} className='md:block hidden h-screen w-screen bg-neutral-950 text-white '>
           <div ref={projectContainerRef} className='flex w-fit h-fit gap-20'>
 
                 {/*Panel de projet pc/tablet*/}
@@ -169,6 +170,54 @@ const Projects = () => {
                             <div className='flex flex-col gap-5'>
                               <p className='font-mono text-[12px] text-neutral-400'>{project.description}</p>
                                 <div className='flex gap-4'>
+                                    {
+                                      project.tech.map((techName , i)=>{
+                                        return(
+                                          <div key={i} className="px-2 py-1 border border-white text-[10px] uppercase h-fit">
+                                            <p>{techName}</p>
+                                            </div>
+                                        )
+                                      })
+                                    }
+                              </div>
+                              <p className={`font-mono text-[12px] w-fit text-black rounded p-2 ${project.colorBg} h-fit`}>{project.note}</p>
+                            </div>
+                      </div>
+                    </div>)
+          
+                  })
+                }
+          </div>
+        </div>
+
+         {/*mobile*/}
+         <div id="projects" className='grid grid-cols-1 md:hidden h-fit w-screen bg-neutral-950 text-white z-99'>
+          <div className='grid grid-cols-1 w-fit h-fit gap-10'>
+
+                {/*Panel de projet pc/tablet*/}
+                <h1 className='absolute left-10 top-50 z-1 animate-pulse font-mono text-[] md:text-[12px]'>[clique <br/> n'importe où.]</h1>
+
+                <Stickers/>
+                {      
+                  projectsList.map((project, i) =>{
+                    return(
+                    <div key={i} className='h-screen w-screen flex flex-col items-center justify-center px-10'>
+                      <div className='grid grid-cols-1 w-full h-150 justify-center'>
+                            {/*Title */}
+                            <div className='z-1000'>
+                              <h1 className='text-3xl font-bold'>{project.nom}</h1>
+                              <a  className="text-[8px] font-mono -mt-1.5 hover:opacity-40 hover:underline transition-all w-fit z-1000" href={project.lien} target="_blank">[ Clique ici pour voir le projet ]</a>
+                            </div>
+
+                            {/*Image */}
+                            <div >
+                              <img src={project.image} alt={project.nom} className='object-cover rounded-xl w-screen h-50' />
+                            </div>
+
+                            {/*Titre & description  */}
+                            <div className='flex flex-col gap-5'>
+                              <p className='font-mono text-[12px] text-neutral-400'>{project.description}</p>
+                                <div className='grid gap-4'>
                                     {
                                       project.tech.map((techName , i)=>{
                                         return(

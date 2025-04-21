@@ -62,7 +62,7 @@ const App = () => {
       <LoadingScreen isLoading={isLoading} percentage={loadPercentage} />
 
 
-        <Router> {/*deploy : basename="/portfolio_v2"*/}
+        <Router basename="/portfolio_v2"> {/*deploy : basename="/portfolio_v2" */}
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<MainLayout />}>
